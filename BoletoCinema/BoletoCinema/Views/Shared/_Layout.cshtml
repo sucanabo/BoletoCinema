@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @await Html.PartialAsync("_HeaderPartial.cshtml");
+  @RenderSection("css", required: false);
+</head>
+
+<body>
+    <!-- ==========Preloader========== -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Preloader========== -->
+    <!-- ==========Overlay========== -->
+    <div class="overlay"></div>
+    <a href="#0" class="scrollToTop">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- ==========Overlay========== -->
+    <!-- ==========Header-Section========== -->
+    @await Html.PartialAsync("_HeadPartial.cshtml"); 
+    <!-- ==========Header-Section========== -->
+    <!-- ==========Banner-Section========== -->
+    @RenderBody();
+    <!-- ==========Movie-Main-Section========== -->
+    <!-- ==========Newslater-Section========== -->
+    @await Html.PartialAsync("_FooterPartial.cshtml");
+    <!-- ==========Newslater-Section========== -->
+
+
+    <!--Script-->
+    @await Html.PartialAsync("_ScriptPartial.cshtml");
+    @RenderSection("Scripts", required: false);
+</body>
+
+</html>
