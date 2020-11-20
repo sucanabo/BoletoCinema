@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @await Html.PartialAsync("_HeaderPartial.cshtml")
+    @RenderSection("css", required: false)
+</head>
+
+<body>
+    <!-- ==========Preloader========== -->
+
+    <!-- ==========Header-Section========== -->
+    <!-- ==========Banner-Section========== -->
+    @RenderBody()
+    <!-- ==========Movie-Main-Section========== -->
+    <!-- ==========Newslater-Section========== -->
+    
+    <!-- ==========Newslater-Section========== -->
+    <!--Script-->
+    @await Html.PartialAsync("_ScriptPartial.cshtml")
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
