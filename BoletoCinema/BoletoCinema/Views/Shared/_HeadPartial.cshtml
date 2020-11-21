@@ -1,0 +1,135 @@
+﻿@{ 
+
+}
+<header class="header-section">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/User/assets/images/logo/logo.png" alt="logo">
+                </a>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="#0" @*class="active"*@>Home</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#0" class="active">Home One</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="Index2">Home Two</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">movies</a>
+                    <ul class="submenu">
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieGrid">Movie Grid</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieList">Movie List</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieDetail">Movie Details</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieDetail2">Movie Details 2</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieTicketPlan">Movie Ticket Plan</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieSeatPlan">Movie Seat Plan</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieCheckout">Movie Checkout</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="MovieFood">Movie Food</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">events</a>
+                    <ul class="submenu">
+                        <li>
+                            <a asp-controller="Home" asp-action="Event">Events</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="EventDetail">Event Details</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="EventSpeaker">Event Speaker</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="EventTicket">Event Ticket</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="EventCheckout">Event Checkout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">sports</a>
+                    <ul class="submenu">
+                        <li>
+                            <a asp-controller="Home" asp-action="Sport">Sports</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="SportDetail">Sport Details</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="SportTicket">Sport Ticket</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="SportCheckout">Sport Checkout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">pages</a>
+                    <ul class="submenu">
+                        <li>
+                            <a asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="AppDownload">Apps Download</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="SignIn">Sign In</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="SignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="Error404">404</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">blog</a>
+                    <ul class="submenu">
+                        <li>
+                            <a asp-controller="Home" asp-action="Blog">Blog</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Home" asp-action="BlogSingle">Blog Single</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Contact">contact</a>
+                </li>
+                <li class="header-button pr-0">
+                    <a href="sign-up.html">join us</a>
+                </li>
+            </ul>
+            <div class="header-bar d-lg-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
