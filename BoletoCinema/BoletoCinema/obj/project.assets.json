@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "projectUniqueName": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
       "projectName": "BoletoCinema",
-      "projectPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
+      "projectPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
