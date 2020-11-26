@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace BoletoCinema.Models
 {
-    public class ContactForm
+    public class User
     {
         [Key]
         public int id { get; set; }
-        public int user_id { get; set; }
-        public string content { get; set; }
-        public string status { get; set; }
-        public string create_date { get; set; }
-        [ForeignKey("user_id")]
-        public virtual User user { get; set; }
-        
+        public string username { get; set; }
+        public string displayname{ get; set; }
+        public string email { get; set; }
+        public DateTime birthday { get; set; }
+        public string avatar { get; set; }
     }
 }
