@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema-Model\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {}
+    "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema-Model\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {
+    "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema-Model\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+        "projectUniqueName": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
         "projectName": "BoletoCinema",
-        "projectPath": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema-Model\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema-Model\\BoletoCinema\\BoletoCinema\\obj\\",
+        "projectPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.0, )"
