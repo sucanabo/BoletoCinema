@@ -9,6 +9,7 @@ namespace BoletoCinema.Models
 {
     public class Seat
     {
+        [Key]
         public int id { get; set; }
 
         public int room_id { get; set; }
@@ -20,6 +21,6 @@ namespace BoletoCinema.Models
         [ForeignKey("room_id")]
         public virtual Room room { get; set; }
 
-       // public ICollection<Ticket> ticket { get; set; }
+        public ICollection<Ticket> ticket { get; set; }
     }
 }

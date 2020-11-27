@@ -9,6 +9,7 @@ namespace BoletoCinema.Models
 {
     public class Branch
     {
+        [Key]
         public int id { get; set; }
 
         public string name { get; set; }

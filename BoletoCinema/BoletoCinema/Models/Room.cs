@@ -9,6 +9,7 @@ namespace BoletoCinema.Models
 {
     public class Room
     {
+        [Key]
         public int id { get; set; }
         public int branch_id { get; set; }
 
@@ -20,6 +21,6 @@ namespace BoletoCinema.Models
         public virtual Branch branch { get; set; }
 
         public ICollection<Seat> seat { get; set; }
-        //public ICollection<Ticket> ticket { get; set; }
+        public ICollection<Ticket> ticket { get; set; }
     }
 }

@@ -9,6 +9,7 @@ namespace BoletoCinema.Models
 {
     public class Schedule
     {
+        [Key]
         public int id { get; set; }
 
         public int branch_id { get;set;}
@@ -16,6 +17,6 @@ namespace BoletoCinema.Models
         [ForeignKey("branch_id")]
         public virtual Branch branch { get; set; }
 
-        //public ICollection<Ticket> ticket{get;set;}
+        public ICollection<Ticket> ticket{get;set;}
     }
 }

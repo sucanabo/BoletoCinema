@@ -8,11 +8,12 @@ namespace BoletoCinema.Models
 {
     public class MovieDiscount
     {
+        [Key]
         public int movie_id { get; set; }
         public int discount_id { get; set; }
 
-        //[ForeignKey("movie_id")]
-        //public virtual Movie movie{ get; set; }
+        [ForeignKey("movie_id")]
+        public virtual Movie movie{ get; set; }
 
         [ForeignKey("discount_id")]
         public virtual Discount discount{ get; set; }
