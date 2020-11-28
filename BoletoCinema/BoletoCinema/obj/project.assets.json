@@ -5798,19 +5798,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "projectUniqueName": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
       "projectName": "BoletoCinema",
-      "projectPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
+      "projectPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5822,6 +5822,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5833,6 +5834,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5867,16 +5869,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
