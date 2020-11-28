@@ -17,6 +17,6 @@ namespace BoletoCinema.Models
         [ForeignKey("branch_id")]
         public virtual Branch branch { get; set; }
 
-        public ICollection<Ticket> ticket{get;set;}
+        public ICollection<Ticket> tickets{get;set;}
     }
 }

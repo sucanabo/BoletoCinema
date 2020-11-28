@@ -13,17 +13,16 @@ namespace BoletoCinema.Models
         public int id { get; set; }
 
         public int user_id { get; set; }
-        [ForeignKey("user_id")]
-        public virtual User user { get; set; }
-
+      
         public int ticket_id { get; set; }
-        [ForeignKey("ticket_id")]
-        public virtual Ticket ticket { get; set; }
 
-        public decimal total_price { get; set; }
+        public double total_price { get; set; }
 
         public int status { get; set; }
 
         public DateTime create_date { get; set; }
+        [ForeignKey("user_id")]
+        public virtual User user { get; set; }
+        public ICollection<Ticket> tickets { get; set; }
     }
 }

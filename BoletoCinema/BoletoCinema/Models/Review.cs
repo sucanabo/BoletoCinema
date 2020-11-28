@@ -14,8 +14,8 @@ namespace BoletoCinema.Models
         public int user_id { get; set; }
         public int movie_id { get; set; }
         public string content { get; set; }
-        public string heart_rate { get; set; }
-        public string create_date { get; set; }
+        public int heart_rate { get; set; }
+        public DateTime create_date { get; set; }
         [ForeignKey("user_id")]
         public virtual User user { get; set; }
         [ForeignKey("movie_id")]

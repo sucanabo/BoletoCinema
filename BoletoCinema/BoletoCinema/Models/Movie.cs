@@ -17,14 +17,16 @@ namespace BoletoCinema.Models
 
         public  string trailer_path { get; set; }
 
-        public  decimal price { get; set; }
-
         public int status { get; set; }
 
         public int duration { get; set; }
 
         public DateTime published_date { get; set; }
 
+        public ICollection<Image> images { get; set; }
+        public ICollection<Movie_Category> movie_Categories { get; set; }
+        public ICollection<Movie_Actor> movie_Actors { get; set; }
         public ICollection<Session> ListSession { get; set; }
+        public ICollection<MovieDiscount> movieDiscounts { get; set; }
     }
 }

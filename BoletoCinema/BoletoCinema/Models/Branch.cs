@@ -16,10 +16,10 @@ namespace BoletoCinema.Models
 
         public string address { get; set; }
 
-        public string status { get; set; }
+        public int status { get; set; }
 
-        public ICollection<Schedule> schedule { get; set; }
+        public ICollection<Schedule> schedules { get; set; }
 
-        public ICollection<Room> room { get; set; }
+        public ICollection<Room> rooms { get; set; }
     }
 }

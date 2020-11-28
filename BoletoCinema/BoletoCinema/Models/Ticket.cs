@@ -28,7 +28,7 @@ namespace BoletoCinema.Models
         [ForeignKey("seat_id")]
         public virtual Seat seat { get; set; }
 
-        public decimal price { get; set; }
+        public double price { get; set; }
 
     }
 }

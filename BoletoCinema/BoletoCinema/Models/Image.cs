@@ -13,7 +13,7 @@ namespace BoletoCinema.Models
         public int id { get; set; }
         public int movie_id { get; set; }
         public string path { get; set; }
-        public string status { get; set; }
+        public int status { get; set; }
         [ForeignKey("movie_id")]
         public virtual Movie movie { get; set; }
 

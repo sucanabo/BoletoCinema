@@ -21,6 +21,6 @@ namespace BoletoCinema.Models
         [ForeignKey("room_id")]
         public virtual Room room { get; set; }
 
-        public ICollection<Ticket> ticket { get; set; }
+        public ICollection<Ticket> tickets { get; set; }
     }
 }
