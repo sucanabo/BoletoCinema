@@ -16,7 +16,7 @@ namespace BoletoCinema.Models
         public string status { get; set; }
         public string create_date { get; set; }
         [ForeignKey("user_id")]
-        //public virtual User user { get; set; }
+        public virtual User user { get; set; }
         
     }
 }
