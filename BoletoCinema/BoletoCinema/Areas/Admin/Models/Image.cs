@@ -16,6 +16,5 @@ namespace BoletoCinema.Areas.Admin.Models
         public int status { get; set; }
         [ForeignKey("movie_id")]
         public virtual Movie movie { get; set; }
-
     }
 }

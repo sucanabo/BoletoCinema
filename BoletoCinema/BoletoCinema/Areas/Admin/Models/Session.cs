@@ -15,15 +15,14 @@ namespace BoletoCinema.Areas.Admin.Models
         [ForeignKey("movie_id")]
         public virtual Movie movie { get; set; }
 
-        public int schedule_id {get;set;}
+        public int schedule_id { get; set; }
         [ForeignKey("schedule_id")]
         public virtual Schedule schedule { get; set; }
+
+        public ICollection<Ticket> tickets { get; set; }
 
         public DateTime start_time { get; set; }
         public DateTime end_time { get; set; }
         public DateTime show_date { get; set; }
-
-       
-
     }
 }

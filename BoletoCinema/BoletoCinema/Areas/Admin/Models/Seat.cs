@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace BoletoCinema.Areas.Admin.Models
 {
     public class Seat
@@ -21,6 +21,6 @@ namespace BoletoCinema.Areas.Admin.Models
         [ForeignKey("room_id")]
         public virtual Room room { get; set; }
 
-        public ICollection<Ticket> tickets { get; set; }
+       public Ticket tickets { get; set; }
     }
 }
