@@ -10,7 +10,7 @@ namespace BoletoCinema.Areas.Admin.Models
     {
         [Key]
         public int id { get; set; }
-        public string name   { get; set; }
+        public string name { get; set; }
         public double discount_percent { get; set; }
         public int status { get; set; }
 

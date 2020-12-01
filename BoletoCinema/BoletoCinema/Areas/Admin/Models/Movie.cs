@@ -13,9 +13,9 @@ namespace BoletoCinema.Areas.Admin.Models
 
         public string name { get; set; }
 
-        public  string summery { get; set; }
+        public string summery { get; set; }
 
-        public  string trailer_path { get; set; }
+        public string trailer_path { get; set; }
 
         public int status { get; set; }
 
@@ -27,6 +27,5 @@ namespace BoletoCinema.Areas.Admin.Models
         public ICollection<Movie_Category> movie_Categories { get; set; }
         public ICollection<Movie_Actor> movie_Actors { get; set; }
         public ICollection<Session> ListSession { get; set; }
-       
     }
 }

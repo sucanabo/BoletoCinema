@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,6 +19,6 @@ namespace BoletoCinema.Areas.Admin.Models
         public ICollection<Review> reviews { get; set; }
         public ICollection<ContactForm> contactForms { get; set; }
         public ICollection<Order> orders { get; set; }
-        public ICollection<UserDiscount> userDiscounts {get;set;}
+        public ICollection<UserDiscount> userDiscounts { get; set; }
     }
 }

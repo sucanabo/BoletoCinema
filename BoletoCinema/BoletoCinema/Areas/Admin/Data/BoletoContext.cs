@@ -6,9 +6,13 @@ using BoletoCinema.Areas.Admin.Models;
 using Microsoft.EntityFrameworkCore;
 namespace BoletoCinema.Areas.Admin.Data
 {
-    public class BoletoContext:DbContext
+    public class BoletoContext : DbContext
     {
-        public BoletoContext(DbContextOptions<BoletoContext> options) : base(options) { }
+        public BoletoContext(DbContextOptions<BoletoContext> options)
+    : base(options)
+        {
+        }
+
         public DbSet<Actor> actors { get; set; }
         public DbSet<Branch> branches { get; set; }
         public DbSet<Category> categories { get; set; }
@@ -18,7 +22,11 @@ namespace BoletoCinema.Areas.Admin.Data
         public DbSet<Movie> movies { get; set; }
         public DbSet<Movie_Actor> movie_Actors { get; set; }
         public DbSet<Movie_Category> movie_Categories { get; set; }
+
         public DbSet<Movie_Discount> movie_Discounts { get; set; }
+
+        public DbSet<Movie_Discount> movieDiscounts { get; set; }
+
         public DbSet<Order> orders { get; set; }
         public DbSet<Report> reports { get; set; }
         public DbSet<Review> reviews { get; set; }
