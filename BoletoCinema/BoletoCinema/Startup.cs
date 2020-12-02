@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BoletoCinema.Areas.Admin.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 namespace BoletoCinema
 {
     public class Startup
@@ -43,20 +44,26 @@ namespace BoletoCinema
 
             //app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
 
             //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                   name: "Admin",
+                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                    name: "default",
                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                //endpoints.MapControllerRoute(
-                //  name: "default",
-                //  pattern: "{controller=Admin}/{action=Index}/{id?}");
+                
             });
         }
     }

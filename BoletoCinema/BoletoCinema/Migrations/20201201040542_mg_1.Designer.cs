@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201201023534_mg_1")]
+    [Migration("20201201040542_mg_1")]
     partial class mg_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
