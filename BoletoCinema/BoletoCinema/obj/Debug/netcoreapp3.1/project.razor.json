@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+  "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,178 +14392,163 @@
   "RootNamespace": "BoletoCinema",
   "Documents": [
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieDetail.cshtml",
-      "TargetPath": "Views\\Home\\MovieDetail.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_FooterAdminPartial.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_FooterAdminPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SportDetail.cshtml",
-      "TargetPath": "Views\\Home\\SportDetail.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SportTicket.cshtml",
-      "TargetPath": "Views\\Home\\SportTicket.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieSeatPlan.cshtml",
-      "TargetPath": "Views\\Home\\MovieSeatPlan.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\AppDownload.cshtml",
-      "TargetPath": "Views\\Home\\AppDownload.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieList.cshtml",
-      "TargetPath": "Views\\Home\\MovieList.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_HeaderPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_HeaderPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SignUp.cshtml",
-      "TargetPath": "Views\\Home\\SignUp.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\EventSpeaker.cshtml",
-      "TargetPath": "Views\\Home\\EventSpeaker.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Blog.cshtml",
-      "TargetPath": "Views\\Home\\Blog.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieCheckout.cshtml",
-      "TargetPath": "Views\\Home\\MovieCheckout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SignIn.cshtml",
-      "TargetPath": "Views\\Home\\SignIn.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieFood.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieFood.cshtml",
       "TargetPath": "Views\\Home\\MovieFood.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Event.cshtml",
-      "TargetPath": "Views\\Home\\Event.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Home\\Login.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Home\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Index2.cshtml",
-      "TargetPath": "Views\\Home\\Index2.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\AppDownload.cshtml",
+      "TargetPath": "Views\\Home\\AppDownload.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Sport.cshtml",
-      "TargetPath": "Views\\Home\\Sport.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Error404.cshtml",
+      "TargetPath": "Views\\Home\\Error404.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\About.cshtml",
-      "TargetPath": "Views\\Home\\About.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_ScriptPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ScriptPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieDetail2.cshtml",
-      "TargetPath": "Views\\Home\\MovieDetail2.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieGrid.cshtml",
-      "TargetPath": "Views\\Home\\MovieGrid.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Contact.cshtml",
-      "TargetPath": "Views\\Home\\Contact.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\BlogSingle.cshtml",
-      "TargetPath": "Views\\Home\\BlogSingle.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_HeadPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_HeadPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\EventCheckout.cshtml",
-      "TargetPath": "Views\\Home\\EventCheckout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\EventTicket.cshtml",
-      "TargetPath": "Views\\Home\\EventTicket.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_FooterPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_FooterPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_LayoutSimple.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_LayoutSimple.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutSimple.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieTicketPlan.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Home\\Post.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Home\\Post.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_ScriptPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ScriptPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SignIn.cshtml",
+      "TargetPath": "Views\\Home\\SignIn.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SignUp.cshtml",
+      "TargetPath": "Views\\Home\\SignUp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\About.cshtml",
+      "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieSeatPlan.cshtml",
+      "TargetPath": "Views\\Home\\MovieSeatPlan.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_FooterPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_FooterPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_HeaderAdminPartial.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_HeaderAdminPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_HeaderPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_HeaderPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieCheckout.cshtml",
+      "TargetPath": "Views\\Home\\MovieCheckout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_HeadPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_HeadPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieDetail.cshtml",
+      "TargetPath": "Views\\Home\\MovieDetail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Contact.cshtml",
+      "TargetPath": "Views\\Home\\Contact.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_HeadAdminPartial.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_HeadAdminPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieTicketPlan.cshtml",
       "TargetPath": "Views\\Home\\MovieTicketPlan.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\EventDetail.cshtml",
-      "TargetPath": "Views\\Home\\EventDetail.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_ScriptAdminPartial.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_ScriptAdminPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\SportCheckout.cshtml",
-      "TargetPath": "Views\\Home\\SportCheckout.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\MovieGrid.cshtml",
+      "TargetPath": "Views\\Home\\MovieGrid.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Views\\Home\\Error404.cshtml",
-      "TargetPath": "Views\\Home\\Error404.cshtml",
+      "FilePath": "d:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\Areas\\Admin\\Views\\Shared\\_LayoutAdminSimple.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Shared\\_LayoutAdminSimple.cshtml",
       "FileKind": "mvc"
     }
   ],
