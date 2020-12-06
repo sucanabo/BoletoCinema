@@ -652,3 +652,8 @@ C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net
 C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Schedules\Details.cshtml.g.cs
 C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Schedules\Edit.cshtml.g.cs
 C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Schedules\Index.cshtml.g.cs
+C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Discounts\Create.cshtml.g.cs
+C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Discounts\Delete.cshtml.g.cs
+C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Discounts\Details.cshtml.g.cs
+C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Discounts\Edit.cshtml.g.cs
+C:\Users\Admin\Source\Repos\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Discounts\Index.cshtml.g.cs
