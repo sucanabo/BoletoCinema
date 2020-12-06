@@ -7459,19 +7459,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asus\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
       "projectName": "BoletoCinema",
-      "projectPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Source\\Repos\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
