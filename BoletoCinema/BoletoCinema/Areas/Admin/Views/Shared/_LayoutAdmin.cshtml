@@ -12,10 +12,17 @@
 
 <body>
     @await Html.PartialAsync("_HeaderAdminPartial.cshtml")
-    @RenderBody()
-    @await Html.PartialAsync("_FooterAdminPartial.cshtml")
-    <!--Script-->
-    @await Html.PartialAsync("_ScriptAdminPartial.cshtml")
-    @RenderSection("Scripts", required: false)
+
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        @await Html.PartialAsync("_BreadcrumbPartial.cshtml")
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+        
+        @await Html.PartialAsync("_FooterAdminPartial.cshtml")
+        <!--Script-->
+        @await Html.PartialAsync("_ScriptAdminPartial.cshtml")
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
