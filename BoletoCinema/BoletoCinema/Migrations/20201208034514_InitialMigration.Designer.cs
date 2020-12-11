@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201207110148_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201208034514_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

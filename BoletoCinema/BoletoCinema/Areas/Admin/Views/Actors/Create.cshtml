@@ -10,21 +10,29 @@
 <h4>Actor</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="image" class="control-label"></label>
-                <input asp-for="image" class="form-control" />
-                <span asp-validation-for="image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+    <div class="col-md-12">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label">Actor Name</label>
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="custom-file form-group mb-3">
+                        <input type="file" class="custom-file-input" id="ful" name="ful" />
+                        <label class="custom-file-label" for="ful">Choose Image...</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <img src="~/Admin/assets/images/noimg.png" alt="None image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto"/>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BoletoCinema.Areas.Admin.Data;
 using BoletoCinema.Areas.Admin.Models;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace BoletoCinema.Areas.Admin.Controllers
 {
@@ -55,11 +57,22 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,image")] Actor actor)
+        public async Task<IActionResult> Create([Bind("id,name,image")] Actor actor, IFormFile ful)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(actor);
+                await _context.SaveChangesAsync();
+                string path = Path.Combine(
+                   Directory.GetCurrentDirectory(), "wwwroot/Admin/assets/images/actor",
+                   actor.id + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1]
+                   );
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await ful.CopyToAsync(stream);
+                }
+                actor.image = actor.id + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1];
+                _context.Update(actor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -87,7 +100,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,image")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,image")] Actor actor, IFormFile ful)
         {
             if (id != actor.id)
             {
@@ -98,6 +111,26 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (ful != null)
+                    {
+                        var imagePath = Path.Combine(
+                            Directory.GetCurrentDirectory(), "wwwroot/Admin/assets/images/actor",
+                            actor.image
+                        );
+
+                        System.IO.File.Delete(imagePath);
+
+                        var newImagepath = Path.Combine(
+                            Directory.GetCurrentDirectory(), "wwwroot/Admin/assets/images/actor",
+                            actor.id + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1]
+                        );
+
+                        using (var stream = new FileStream(newImagepath, FileMode.Create))
+                        {
+                            await ful.CopyToAsync(stream);
+                        }
+                        actor.image = actor.id + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1];
+                    }
                     _context.Update(actor);
                     await _context.SaveChangesAsync();
                 }
