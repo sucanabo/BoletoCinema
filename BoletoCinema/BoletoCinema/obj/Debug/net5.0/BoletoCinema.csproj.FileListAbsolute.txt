@@ -712,3 +712,4 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admi
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Seats\Details.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Seats\Edit.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Seats\Index.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
