@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PagedList;
+using BoletoCinema.Areas.Admin.Models;
 
 namespace BoletoCinema.Controllers
 {
@@ -14,8 +16,9 @@ namespace BoletoCinema.Controllers
         }
 
 
-        public IActionResult MovieGrid()
+        public IActionResult MovieGrid(int? page)
         {
+
             ViewData["Title"] = "MovieGrid";
             return View();
         }
