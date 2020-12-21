@@ -9091,3 +9091,37 @@ strong {
     width:100px;
     height:auto;
 }
+.input-seach{
+    padding-left: 25px;
+    position: relative;
+    width:100%;
+}
+.search-box {
+    position: relative;
+    margin: 0 15px 0 15px;
+}
+.search-box > span{
+    position: absolute;
+    padding:3px;
+    z-index:1;
+    top:0;
+    left:0;
+}
+img {
+    max-width: 100%;
+}
+
+#imgsPreview {
+    border: 1px solid #000;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:scroll;
+}
+
+#imgsPreview .img-item {
+    max-width: 25%;
+    height:150px;
+    overflow:hidden;
+}

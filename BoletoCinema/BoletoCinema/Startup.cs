@@ -10,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using BoletoCinema.Areas.Admin.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using System;
+
 namespace BoletoCinema
 {
     public class Startup
@@ -26,6 +28,12 @@ namespace BoletoCinema
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
             services.AddControllersWithViews();
 
             services.AddDbContext<BoletoContext>(options =>
@@ -46,9 +54,9 @@ namespace BoletoCinema
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseDefaultFiles();
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
 
             //app.UseAuthorization();

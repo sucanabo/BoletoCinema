@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BoletoCinema.Areas.Admin.Data;
 using BoletoCinema.Areas.Admin.Models;
+using System.IO;
 
 namespace BoletoCinema.Areas.Admin.Controllers
 {
@@ -14,7 +15,6 @@ namespace BoletoCinema.Areas.Admin.Controllers
     public class MoviesController : Controller
     {
         private readonly BoletoContext _context;
-
         public MoviesController(BoletoContext context)
         {
             _context = context;
@@ -47,6 +47,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Movies/Create
         public IActionResult Create()
         {
+            ViewBag.CateList = _context.categories.Where(cate => cate.status == 1);
+            ViewBag.CastList = _context.actors.ToList();
             return View();
         }
 

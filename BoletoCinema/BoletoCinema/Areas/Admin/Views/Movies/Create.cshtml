@@ -10,36 +10,41 @@
 <h4>Movie</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-6">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
+                <label asp-for="name" class="control-label">Name</label>
                 <input asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="summery" class="control-label"></label>
-                <input asp-for="summery" class="form-control" />
+                <label asp-for="summery" class="control-label">Summery</label>
+                <textarea asp-for="summery" class="form-control" rows="10"></textarea>
                 <span asp-validation-for="summery" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="trailer_path" class="control-label"></label>
-                <input asp-for="trailer_path" class="form-control" />
-                <span asp-validation-for="trailer_path" class="text-danger"></span>
+            <div class="custom-file form-group mb-3">
+                <label asp-for="summery" class="control-label">Trailer path</label>
+                <input type="file" class="custom-file-input" id="vul" name="vul"/>
+                <label class="custom-file-label" for="ful">Choose Trailer...</label>
             </div>
             <div class="form-group">
-                <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
+                <label asp-for="status" class="control-label">Status</label>
+                <select asp-for="status" class="form-control">
+                    <option selected>Select movie status</option>
+                    <option value="1">On Show</option>
+                    <option value="2">On Comming</option>
+                    <option value="0">Stop Showing</option>
+                </select>
                 <span asp-validation-for="status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="duration" class="control-label"></label>
-                <input asp-for="duration" class="form-control" />
+                <label asp-for="duration" class="control-label">Duration (minutes)</label>
+                <input type="number" asp-for="duration" class="form-control" />
                 <span asp-validation-for="duration" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="published_date" class="control-label"></label>
+                <label asp-for="published_date" class="control-label">Publish Date</label>
                 <input asp-for="published_date" class="form-control" />
                 <span asp-validation-for="published_date" class="text-danger"></span>
             </div>
@@ -48,12 +53,100 @@
             </div>
         </form>
     </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Movie Categories</label>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#categoriesList">
+                    Open category list
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Movie Cast</label>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#castList">
+                    Open cast list
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="mful" multiple>
+                <label class="custom-file-label" for="mful">Choose file</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="imgsPreview">
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<!--Model categories-->
+<div class="modal fade" id="categoriesList" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:70vw">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Choose categories movie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="search-box">
+                <span><i class="fas fa-search"></i></span>
+                <input type="text" class="input-seach" placeholder="Enter to search" />
+            </div>
+            <div class="modal-body d-flex flex-wrap cate-container">
+                @foreach (var item in ViewBag.cateList)
+                {
+                    <span class="m-3">
+
+                        <input type="checkbox" value="@item.id" />&nbsp;@item.name
+                    </span>
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Model Cast-->
+<div class="modal fade" id="castList" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:70vw">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Choose actor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="search-box">
+                <span><i class="fas fa-search"></i></span>
+                <input type="text" class="input-seach" placeholder="Enter to search" />
+            </div>
+            <div class="modal-body d-flex flex-wrap cate-container">
+                @foreach (var item in ViewBag.CastList)
+                {
+                    <span class="m-3">
+
+                        <input type="checkbox" value="@item.id" />&nbsp;@item.name
+                    </span>
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/Admin/dist/js/modal-search.js"></script>
 }
