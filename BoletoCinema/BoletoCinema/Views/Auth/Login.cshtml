@@ -1,31 +1,12 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model IEnumerable<String>
+
 @{
     Layout = "_LayoutSimple";
+    ViewData["Title"] = "Login";
 }
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-        appId    : '438946823798508',
-      cookie     : true,
-      xfbml      : true,
-        version: '8ee853867cefec6369df64fe64afae89'
-    });
-
-    FB.AppEvents.logPageView();
-
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 
 <div class="preloader">
     <div class="preloader-inner">
@@ -69,9 +50,11 @@
                 <div class="or"><span>Or</span></div>
                 <ul class="social-icons">
                     <li>
-                        <a href="#0">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
+                        @foreach (var item in Model)
+                        {
+                            <a class="fab fa-facebook-f" asp-action="SignIn" asp-route-provider="@item"></a>
+                        }
+
                     </li>
                     <li>
                         <a href="#0" class="active">
