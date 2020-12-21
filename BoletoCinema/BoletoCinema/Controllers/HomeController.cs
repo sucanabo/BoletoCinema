@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace BoletoCinema.Controllers
 {
     public class HomeController : Controller
@@ -40,9 +39,9 @@ namespace BoletoCinema.Controllers
             ViewData["Title"] = "MovieSeatPlan";
             return View();
         }
-
         public IActionResult MovieCheckout()
         {
+
             ViewData["Title"] = "MovieCheckout";
             return View();
         }

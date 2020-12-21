@@ -4,6 +4,7 @@
 @{
 }
 @using Microsoft.AspNetCore.Http
+
 <section class="details-banner hero-area bg_img seat-plan-banner" data-background="~/User/assets/images/banner/banner04.jpg">
     <div class="container">
         <div class="details-banner-wrapper">
@@ -254,9 +255,12 @@
                     <h3 class="title"></h3>
                 </div>
                 <div class="book-item">
-                    <a id="proceed-btn" class="custom-button">proceed</a>
+                    <a id="proceed-btn" asp-action="MovieCheckout" class="custom-button">proceed</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script src="~/User/assets/js/seat-plan.js"></script>
+}
