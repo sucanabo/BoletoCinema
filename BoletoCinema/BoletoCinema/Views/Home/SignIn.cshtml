@@ -4,6 +4,29 @@
 @{
     Layout = "_LayoutSimple";
 }
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+        appId    : '438946823798508',
+      cookie     : true,
+      xfbml      : true,
+        version: '8ee853867cefec6369df64fe64afae89'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
