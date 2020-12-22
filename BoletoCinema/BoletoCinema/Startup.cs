@@ -11,6 +11,7 @@ using BoletoCinema.Areas.Admin.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace BoletoCinema
 {
@@ -28,6 +29,19 @@ namespace BoletoCinema
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = "899176127488499";
+                    facebookOptions.AppSecret = "f423b91c6256b550e0cd130ac581cbdf";
+                })
+                .AddCookie();
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -51,7 +65,7 @@ namespace BoletoCinema
             }
 
             //app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseDefaultFiles();

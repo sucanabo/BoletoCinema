@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
 
 }
 <header class="header-section">
@@ -50,24 +50,33 @@
                         <li>
                             <a asp-controller="Home" asp-action="AppDownload">Apps Download</a>
                         </li>
-                        <li>
-                            <a asp-controller="Home" asp-action="SignIn">Sign In</a>
-                        </li>
-                        <li>
-                            <a asp-controller="Home" asp-action="SignUp">Sign Up</a>
-                        </li>
+
                         <li>
                             <a asp-controller="Home" asp-action="Error404">404</a>
                         </li>
                     </ul>
                 </li>
-                
+
                 <li>
                     <a asp-controller="Home" asp-action="Contact">contact</a>
                 </li>
-                <li class="header-button pr-0">
-                    <a asp-controller="Home" asp-action="SignUp">join us</a>
-                </li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>
+                        <a asp-controller="Auth" asp-action="SignOut">Sign out</a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="header-button pr-0">
+                        <a asp-controller="Home" asp-action="SignUp">join us</a>
+                    </li>
+                    <li class="header-button pr-0">
+                        <a asp-controller="Auth" asp-action="Login">Login</a>
+                    </li>
+                }
             </ul>
             <div class="header-bar d-lg-none">
                 <span></span>
