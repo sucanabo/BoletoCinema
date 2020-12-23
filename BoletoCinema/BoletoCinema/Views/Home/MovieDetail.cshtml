@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model BoletoCinema.Areas.Admin.Models.Movie
 @{
 }
 <section class="details-banner bg_img" data-background="~/User/assets/images/banner/banner03.jpg">
@@ -47,7 +48,7 @@
         <div class="book-wrapper offset-lg-3">
             <div class="left-side">
                 <div class="item">
-                   
+
                 </div>
                 <div class="item">
                     <div class="item-header">
@@ -87,7 +88,10 @@
                     <p><a href="#0">Rate It</a></p>
                 </div>
             </div>
-            <a asp-controller="Home" asp-action="MovieTicketPlan" class="custom-button">book tickets</a>
+          
+                <a asp-controller="Home" asp-action="MovieTicketPlan" asp-route-id="@ViewData["movie_id"]" class="custom-button">book tickets</a>
+             
+
         </div>
     </div>
 </section>

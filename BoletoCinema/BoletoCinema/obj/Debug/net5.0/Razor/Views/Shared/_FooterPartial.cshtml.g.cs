@@ -14,13 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\Clone\BoletoCinema\BoletoCinema\BoletoCinema\Views\_ViewImports.cshtml"
+using BoletoCinema.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Clone\BoletoCinema\BoletoCinema\BoletoCinema\Views\_ViewImports.cshtml"
 using BoletoCinema;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a45177af4ce6e5876f99661434950650db23f08", @"/Views/Shared/_FooterPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c98956751c3de026257271ce590f00f221b4949", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"028f617e5d98b6b96dc6a52d480e9aa09642c1f8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__FooterPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("newslater-form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -60,7 +67,7 @@ using BoletoCinema;
                     <h5 class=""cate"">subscribe to Boleto </h5>
                     <h3 class=""title"">to get exclusive benifits</h3>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a45177af4ce6e5876f99661434950650db23f084763", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a45177af4ce6e5876f99661434950650db23f084957", async() => {
                 WriteLiteral("\r\n                        <input type=\"text\" placeholder=\"Your Email Address\">\r\n                        <button type=\"submit\">subscribe</button>\r\n                    ");
             }
             );
@@ -87,7 +94,7 @@ using BoletoCinema;
             <div class=""logo"">
                 <a href=""index-1.html"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8a45177af4ce6e5876f99661434950650db23f086567", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8a45177af4ce6e5876f99661434950650db23f086761", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -46,23 +46,20 @@
                 </div>
                 <div class="or"><span>Or</span></div>
                 <ul class="social-icons">
-                    <li>
-                        @foreach (var item in Model)
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.ToUpper() == "FACEBOOK")
                         {
-                            <a class="fab fa-facebook-f" asp-action="SignIn" asp-route-provider="@item"></a>
+                            <li><a class="fab fa-facebook-f" asp-action="SignIn" asp-route-provider="@item"></a></li>
+                        }
+                        if (item.ToUpper() == "GOOGLE")
+                        {
+                            <li><a class="fab fa-google" asp-action="SignIn" asp-route-provider="@item"></a></li>
                         }
 
-                    </li>
-                    <li>
-                        <a href="#0" class="active">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#0">
-                            <i class="fab fa-google"></i>
-                        </a>
-                    </li>
+
+                    }
                 </ul>
             </div>
         </div>
