@@ -17,7 +17,7 @@ namespace BoletoCinema.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Actor", b =>
                 {
@@ -364,9 +364,17 @@ namespace BoletoCinema.Migrations
                     b.Property<int>("branch_id")
                         .HasColumnType("int");
 
+                    b.Property<int>("room_id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("roomid")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
 
                     b.HasIndex("branch_id");
+
+                    b.HasIndex("roomid");
 
                     b.ToTable("schedules");
                 });
@@ -658,7 +666,13 @@ namespace BoletoCinema.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BoletoCinema.Areas.Admin.Models.Room", "room")
+                        .WithMany("schedules")
+                        .HasForeignKey("roomid");
+
                     b.Navigation("branch");
+
+                    b.Navigation("room");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Seat", b =>
@@ -790,6 +804,8 @@ namespace BoletoCinema.Migrations
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Room", b =>
                 {
+                    b.Navigation("schedules");
+
                     b.Navigation("seats");
 
                     b.Navigation("tickets");

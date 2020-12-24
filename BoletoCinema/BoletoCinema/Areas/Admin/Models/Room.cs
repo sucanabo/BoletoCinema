@@ -22,5 +22,6 @@ namespace BoletoCinema.Areas.Admin.Models
 
         public ICollection<Seat> seats { get; set; }
         public ICollection<Ticket> tickets { get; set; }
+        public ICollection<Schedule> schedules { get; set; }
     }
 }

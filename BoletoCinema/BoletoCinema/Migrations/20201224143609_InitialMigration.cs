@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BoletoCinema.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -116,25 +116,6 @@ namespace BoletoCinema.Migrations
                     table.PrimaryKey("PK_rooms", x => x.id);
                     table.ForeignKey(
                         name: "FK_rooms_branches_branch_id",
-                        column: x => x.branch_id,
-                        principalTable: "branches",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "schedules",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    branch_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_schedules", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_schedules_branches_branch_id",
                         column: x => x.branch_id,
                         principalTable: "branches",
                         principalColumn: "id",
@@ -341,6 +322,33 @@ namespace BoletoCinema.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "schedules",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    branch_id = table.Column<int>(type: "int", nullable: false),
+                    room_id = table.Column<int>(type: "int", nullable: false),
+                    roomid = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_schedules", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_schedules_branches_branch_id",
+                        column: x => x.branch_id,
+                        principalTable: "branches",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_schedules_rooms_roomid",
+                        column: x => x.roomid,
+                        principalTable: "rooms",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "seats",
                 columns: table => new
                 {
@@ -357,6 +365,29 @@ namespace BoletoCinema.Migrations
                         name: "FK_seats_rooms_room_id",
                         column: x => x.room_id,
                         principalTable: "rooms",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "reports",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    review_id = table.Column<int>(type: "int", nullable: false),
+                    create_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_reports", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_reports_reviews_review_id",
+                        column: x => x.review_id,
+                        principalTable: "reviews",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -386,29 +417,6 @@ namespace BoletoCinema.Migrations
                         name: "FK_sessions_schedules_schedule_id",
                         column: x => x.schedule_id,
                         principalTable: "schedules",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "reports",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    review_id = table.Column<int>(type: "int", nullable: false),
-                    create_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_reports", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_reports_reviews_review_id",
-                        column: x => x.review_id,
-                        principalTable: "reviews",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -532,6 +540,11 @@ namespace BoletoCinema.Migrations
                 column: "branch_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_schedules_roomid",
+                table: "schedules",
+                column: "roomid");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_seats_room_id",
                 table: "seats",
                 column: "room_id");
@@ -635,13 +648,13 @@ namespace BoletoCinema.Migrations
                 name: "users");
 
             migrationBuilder.DropTable(
-                name: "rooms");
-
-            migrationBuilder.DropTable(
                 name: "movies");
 
             migrationBuilder.DropTable(
                 name: "schedules");
+
+            migrationBuilder.DropTable(
+                name: "rooms");
 
             migrationBuilder.DropTable(
                 name: "branches");

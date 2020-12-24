@@ -8,13 +8,17 @@ function readURL(input, idImg) {
     }
 }
 $("#ful").change(function () {
+    console.log("oke");
     readURL(this, '#imgPre');
 });
-var ful = document.querySelector('#mful');
-ful.addEventListener('change', function () {
-    readURL(this, '#imgsPreview')
-});
-function readURL(input, preview) {
+var mful = document.querySelector('#mful');
+if (mful) {
+    mful.addEventListener('change', function () {
+        mreadURL(this, '#imgsPreview')
+    });
+}
+
+function mreadURL(input, preview) {
     $(preview).empty();
     if (input.files) {
         var filesSize = input.files.length;

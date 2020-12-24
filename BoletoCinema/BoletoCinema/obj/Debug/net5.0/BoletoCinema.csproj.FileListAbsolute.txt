@@ -714,3 +714,8 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extens
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\BoletoCinema.csprojAssemblyReference.cache
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reports1\Create.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reports1\Delete.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reports1\Details.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reports1\Edit.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reports1\Index.cshtml.g.cs
