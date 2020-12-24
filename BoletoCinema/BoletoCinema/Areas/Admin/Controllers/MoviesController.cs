@@ -61,6 +61,13 @@ namespace BoletoCinema.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                string str = movie.trailer_path;
+                if (movie.trailer_path != null)
+                {
+                    
+                    str = str.Substring(str.IndexOf("=") + 1);
+                }
+                movie.trailer_path = str;
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -100,6 +107,13 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 try
                 {
+                    string str = movie.trailer_path;
+                    if (movie.trailer_path != null)
+                    {
+
+                        str = str.Substring(str.IndexOf("=") + 1);
+                    }
+                    movie.trailer_path = str;
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }

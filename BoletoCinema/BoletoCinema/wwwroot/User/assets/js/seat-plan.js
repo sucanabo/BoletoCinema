@@ -8,7 +8,6 @@ var totalPrice;
 var seatSelected = new Set();
 var dataSeatPos = new Set();
 var seat_container_single = document.querySelector(".seat-area2");
-var seat_container_couple = document.querySelector(".seat-area2.couple");
 //call API
 const uri = `https://localhost:44350/api/seats`;
 fetch(uri)
@@ -36,10 +35,10 @@ function checkStatus() {
     var allSeat = document.querySelectorAll(".seat-area2 li.single-seat");
     for (let i = 0; i < allSeat.length; i++) {
         if (seatStatus[i] == 1) {
+            allSeat[i].removeChild(allSeat[i].childNodes[1]);
             allSeat[i].classList.remove("seat-free");
-            if (allSeat[i].classList.contains("seat-free-two"))
-                allSeat[i].querySelector('img').src = "../User/assets/images/movie/seat02.png";
-            else allSeat[i].querySelector('img').src = "../User/assets/images/movie/seat01.png";
+            allSeat[i].querySelector('img').src = "../User/assets/images/movie/seat01.png";
+            //allSeat[i].removeEventListener("click", SeatAction);
         }
     }
 }
@@ -136,39 +135,23 @@ function renderSeat(row) {
     }
     function showPrice() {
         let ticketNumber = dataSeatPos.size;
-        let coupleSeat = allSingleSeat.length - colPerRow / 2;
-        let couplePos = 0;
-        dataSeatPos.forEach(item => {
-            if (item >= coupleSeat)
-                couplePos++;
-        });
-        totalPrice = (couplePos * 2 + (ticketNumber - couplePos)) * ticketPrice;
+        totalPrice = ticketNumber * ticketPrice;
         showTotalPrice.innerText = "$" + totalPrice;
     }
     allSingleSeat.forEach(item => {
-        item.addEventListener("click", () => {
+        item.addEventListener("click", function SeatAction(){
             let img = item.querySelector('img');
             let itemText = item.querySelector("span").innerText;
             img.classList.toggle("booked");
             if (img.classList.contains("booked")) {
                 seatSelected.add(itemText);
                 dataSeatPos.add(item.getAttribute("data-seat-pos"));
-                if (item.classList.contains("seat-free-two")) {
-                    img.src = "../User/assets/images/movie/seat02-booked.png";
-                }
-                else {
-                    img.src = "../User/assets/images/movie/seat01-booked.png";
-                }
+                img.src = "../User/assets/images/movie/seat01-booked.png";
             }
             else if (!img.classList.contains("booked")) {
                 seatSelected.delete(itemText);
                 dataSeatPos.delete(item.getAttribute("data-seat-pos"));
-                if (item.classList.contains("seat-free-two")) {
-                    img.src = "../User/assets/images/movie/seat02-free.png";
-                }
-                else {
-                    img.src = "../User/assets/images/movie/seat01-free.png";
-                }
+                img.src = "../User/assets/images/movie/seat01-free.png";
             }
             showSeatSelected();
             showPrice();

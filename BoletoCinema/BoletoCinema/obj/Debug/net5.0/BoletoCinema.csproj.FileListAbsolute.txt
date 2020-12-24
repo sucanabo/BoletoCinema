@@ -167,7 +167,6 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieGrid.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieSeatPlan.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieTicketPlan.cshtml.g.cs
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\SignIn.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\SignUp.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Shared\_HeaderPartial.cshtml.g.cs

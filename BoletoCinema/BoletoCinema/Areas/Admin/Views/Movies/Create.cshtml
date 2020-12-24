@@ -1,5 +1,4 @@
 ﻿@model BoletoCinema.Areas.Admin.Models.Movie
-
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -23,10 +22,10 @@
                 <textarea asp-for="summery" class="form-control" rows="10"></textarea>
                 <span asp-validation-for="summery" class="text-danger"></span>
             </div>
-            <div class="custom-file form-group mb-3">
-                <label asp-for="summery" class="control-label">Trailer path</label>
-                <input type="file" class="custom-file-input" id="vul" name="vul"/>
-                <label class="custom-file-label" for="ful">Choose Trailer...</label>
+            <div class="form-group mb-3">
+                <label asp-for="trailer_path" class="control-label">Trailer path</label>
+                <input type="text" asp-for="trailer_path" class="form-control" />
+                <span asp-validation-for="trailer_path" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="status" class="control-label">Status</label>
@@ -50,6 +49,12 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div class="movie-cate">
+
+            </div>
+            <div class="movie-cast">
+
             </div>
         </form>
     </div>
@@ -99,7 +104,7 @@
                 <span><i class="fas fa-search"></i></span>
                 <input type="text" class="input-seach" placeholder="Enter to search" />
             </div>
-            <div class="modal-body d-flex flex-wrap cate-container">
+            <div class="modal-body d-flex flex-wrap modal-container" id="cate-container">
                 @foreach (var item in ViewBag.cateList)
                 {
                     <span class="m-3">
@@ -111,7 +116,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary save-btn"id="save-cate" >Save changes</button>
             </div>
         </div>
     </div>
@@ -128,7 +133,7 @@
                 <span><i class="fas fa-search"></i></span>
                 <input type="text" class="input-seach" placeholder="Enter to search" />
             </div>
-            <div class="modal-body d-flex flex-wrap cate-container">
+            <div class="modal-body d-flex flex-wrap modal-container" id="cast-container">
                 @foreach (var item in ViewBag.CastList)
                 {
                     <span class="m-3">
@@ -140,13 +145,15 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary save-btn" id="save-cast">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script src="~/Admin/dist/js/modal-search.js"></script>
+    <script src="~/Admin/dist/js/add-movie.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
 }
