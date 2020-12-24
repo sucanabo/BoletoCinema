@@ -40,6 +40,11 @@ namespace BoletoCinema
                     facebookOptions.AppId = "899176127488499";
                     facebookOptions.AppSecret = "f423b91c6256b550e0cd130ac581cbdf";
                 })
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = "522715167034-trg6ll42ofsje2jd8t2goisi8ktv915s.apps.googleusercontent.com";
+                    googleOptions.ClientSecret = "Kx5zV7NeVbt1kziBJ78n6JtV";
+                })
                 .AddCookie();
 
             services.AddSession(options =>
@@ -65,6 +70,7 @@ namespace BoletoCinema
             }
 
             //app.UseHttpsRedirection();
+            
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

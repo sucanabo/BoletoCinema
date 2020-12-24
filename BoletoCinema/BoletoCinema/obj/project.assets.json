@@ -23,6 +23,18 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Authentication.Google/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2216,6 +2228,21 @@
         "lib/net5.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
         "microsoft.aspnetcore.authentication.facebook.5.0.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.facebook.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/5.0.0": {
+      "sha512": "1fz/ju0RQV5OsA0kGEMwMnRHkQXwW3tel7t7wayZi7Fc7/zPO820PyW+W+AmJ/lfT9zzTYoaLOUqDB/WAM/Eqw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.5.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -7488,6 +7515,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.AspNetCore.Authentication.Facebook >= 5.0.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 5.0.0",
       "Microsoft.Bcl.AsyncInterfaces >= 5.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.1",
@@ -7497,19 +7525,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "projectUniqueName": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
       "projectName": "BoletoCinema",
-      "projectPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
+      "projectPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+      "outputPath": "D:\\Clone\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7536,6 +7564,10 @@
         "targetAlias": "net5.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
             "version": "[5.0.0, )"
           },
