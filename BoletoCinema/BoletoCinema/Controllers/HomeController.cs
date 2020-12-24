@@ -48,13 +48,13 @@ namespace BoletoCinema.Controllers
                             from sd in _db.schedules
                            where m.id == id && s.movie_id == id && sd.branch_id == b.id && s.schedule_id == sd.id 
                             select new { b.name, b.id, s.movie_id };
-
+       
             var listTime = from s in _db.sessions
                            from m in _db.movies
                            from sd in _db.schedules
                            from b in _db.branches
                            where m.id == id && s.movie_id == m.id && s.schedule_id == sd.id && b.id == sd.branch_id
-                           select new { s.start_time, sd.branch_id };
+                           select new { s.start_time, sd.branch_id, s.id };
            
 
             ViewData["Title"] = "MovieTicketPlan";
@@ -65,7 +65,8 @@ namespace BoletoCinema.Controllers
             return View();
         }
 
-        public IActionResult MovieSeatPlan()
+        [Route("Home/MovieSeatPlan/{id}")]
+        public IActionResult MovieSeatPlan(int ?id)
         {
             ViewData["Title"] = "MovieSeatPlan";
             return View();
