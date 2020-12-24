@@ -42,10 +42,8 @@ namespace BoletoCinema
                 })
                 .AddGoogle(googleOptions =>
                 {
-                    
                     googleOptions.ClientId = "522715167034-trg6ll42ofsje2jd8t2goisi8ktv915s.apps.googleusercontent.com";
                     googleOptions.ClientSecret = "Kx5zV7NeVbt1kziBJ78n6JtV";
-
                 })
                 .AddCookie();
 

@@ -42,21 +42,24 @@ namespace BoletoCinema.Controllers
         public IActionResult MovieTicketPlan(int ?id)
         {
 
-            var listBranch = from b in _db.branches
-                             join m in _db.movies on id equals m.id
-                             join sd in _db.schedules on b.id equals sd.branch_id
-                             select b.name;
+           var listBranch = from b in _db.branches
+                           from m in _db.movies
+                            from s in _db.sessions
+                            from sd in _db.schedules
+                           where m.id == id && s.movie_id == id && sd.branch_id == b.id && s.schedule_id == sd.id 
+                            select new { b.name, b.id, s.movie_id };
 
             var listTime = from s in _db.sessions
                            from m in _db.movies
                            from sd in _db.schedules
                            from b in _db.branches
                            where m.id == id && s.movie_id == m.id && s.schedule_id == sd.id && b.id == sd.branch_id
-                           select s.start_time;
-
+                           select new { s.start_time, sd.branch_id };
+           
 
             ViewData["Title"] = "MovieTicketPlan";
-            
+            ViewData["_movie_id"] = id;
+
             ViewBag.Branch = listBranch;
             ViewBag.Time = listTime;
             return View();
