@@ -17,7 +17,7 @@ namespace BoletoCinema.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Actor", b =>
                 {
@@ -488,6 +488,9 @@ namespace BoletoCinema.Migrations
 
                     b.Property<string>("password")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rule")
+                        .HasColumnType("int");
 
                     b.Property<string>("username")
                         .HasColumnType("nvarchar(max)");

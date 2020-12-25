@@ -16,6 +16,7 @@ namespace BoletoCinema.Areas.Admin.Models
         public string email { get; set; }
         public DateTime birthday { get; set; }
         public string avatar { get; set; }
+        public int rule { get; set; }
         public ICollection<Review> reviews { get; set; }
         public ICollection<ContactForm> contactForms { get; set; }
         public ICollection<Order> orders { get; set; }

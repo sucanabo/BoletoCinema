@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201218172310_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201223145831_create")]
+    partial class create
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace BoletoCinema.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Actor", b =>
                 {
@@ -490,6 +490,9 @@ namespace BoletoCinema.Migrations
 
                     b.Property<string>("password")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rule")
+                        .HasColumnType("int");
 
                     b.Property<string>("username")
                         .HasColumnType("nvarchar(max)");

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BoletoCinema.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class create : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -94,7 +94,8 @@ namespace BoletoCinema.Migrations
                     displayname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    avatar = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    rule = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
