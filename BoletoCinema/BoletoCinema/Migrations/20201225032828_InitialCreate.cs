@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BoletoCinema.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -327,25 +327,17 @@ namespace BoletoCinema.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    branch_id = table.Column<int>(type: "int", nullable: false),
-                    room_id = table.Column<int>(type: "int", nullable: false),
-                    roomid = table.Column<int>(type: "int", nullable: true)
+                    room_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_schedules", x => x.id);
                     table.ForeignKey(
-                        name: "FK_schedules_branches_branch_id",
-                        column: x => x.branch_id,
-                        principalTable: "branches",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_schedules_rooms_roomid",
-                        column: x => x.roomid,
+                        name: "FK_schedules_rooms_room_id",
+                        column: x => x.room_id,
                         principalTable: "rooms",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -535,14 +527,9 @@ namespace BoletoCinema.Migrations
                 column: "branch_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_schedules_branch_id",
+                name: "IX_schedules_room_id",
                 table: "schedules",
-                column: "branch_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_schedules_roomid",
-                table: "schedules",
-                column: "roomid");
+                column: "room_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_seats_room_id",

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201224143609_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20201225032828_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -363,20 +363,12 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("branch_id")
-                        .HasColumnType("int");
-
                     b.Property<int>("room_id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("roomid")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("branch_id");
-
-                    b.HasIndex("roomid");
+                    b.HasIndex("room_id");
 
                     b.ToTable("schedules");
                 });
@@ -662,17 +654,11 @@ namespace BoletoCinema.Migrations
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Schedule", b =>
                 {
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Branch", "branch")
-                        .WithMany("schedules")
-                        .HasForeignKey("branch_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BoletoCinema.Areas.Admin.Models.Room", "room")
                         .WithMany("schedules")
-                        .HasForeignKey("roomid");
-
-                    b.Navigation("branch");
+                        .HasForeignKey("room_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("room");
                 });
@@ -765,8 +751,6 @@ namespace BoletoCinema.Migrations
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Branch", b =>
                 {
                     b.Navigation("rooms");
-
-                    b.Navigation("schedules");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Category", b =>

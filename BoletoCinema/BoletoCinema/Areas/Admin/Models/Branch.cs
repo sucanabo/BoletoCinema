@@ -17,8 +17,6 @@ namespace BoletoCinema.Areas.Admin.Models
 
         public int status { get; set; }
 
-        public ICollection<Schedule> schedules { get; set; }
-
         public ICollection<Room> rooms { get; set; }
     }
 }

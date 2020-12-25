@@ -14,13 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\Views\_ViewImports.cshtml"
+using BoletoCinema.Areas.Admin.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\Views\_ViewImports.cshtml"
 using BoletoCinema;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"021c6e9f2b7f273ea22a1e7dd90ba87391917145", @"/Views/Home/MovieFood.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c98956751c3de026257271ce590f00f221b4949", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"028f617e5d98b6b96dc6a52d480e9aa09642c1f8", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_MovieFood : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "sc1", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,7 +95,7 @@ using BoletoCinema;
             <div class=""item date-item"">
                 <span class=""date"">MON, SEP 09 2020</spa");
             WriteLiteral("n>\r\n                <select class=\"select-bar\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba873919171458624", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba873919171458817", async() => {
                 WriteLiteral("09:40");
             }
             );
@@ -104,7 +111,7 @@ using BoletoCinema;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba873919171459802", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba873919171459995", async() => {
                 WriteLiteral("13:45");
             }
             );
@@ -120,7 +127,7 @@ using BoletoCinema;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714510980", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714511173", async() => {
                 WriteLiteral("15:45");
             }
             );
@@ -136,7 +143,7 @@ using BoletoCinema;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714512159", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714512352", async() => {
                 WriteLiteral("19:50");
             }
             );
@@ -169,7 +176,7 @@ using BoletoCinema;
             <div class=""col-lg-8"">
                 <div class=""c-thumb padding-bottom"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714513858", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714514051", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -202,7 +209,7 @@ using BoletoCinema;
                             <div class=""grid-inner"">
                                 <div class=""grid-thumb"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714515906", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714516099", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -232,7 +239,7 @@ using BoletoCinema;
                                         </a>
                                     </h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714517845", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714518038", async() => {
                 WriteLiteral(@"
                                         <div class=""cart-plus-minus"">
                                             <input class=""cart-plus-minus-box"" type=""text"" name=""qtybutton"" value=""2"">
@@ -263,7 +270,7 @@ using BoletoCinema;
                             <div class=""grid-inner"">
                                 <div class=""grid-thumb"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714519953", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714520146", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -293,7 +300,7 @@ using BoletoCinema;
                                         </a>
                                     </h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714521893", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714522086", async() => {
                 WriteLiteral(@"
                                         <div class=""cart-plus-minus"">
                                             <input class=""cart-plus-minus-box"" type=""text"" name=""qtybutton"" value=""2"">
@@ -324,7 +331,7 @@ using BoletoCinema;
                             <div class=""grid-inner"">
                                 <div class=""grid-thumb"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714523999", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714524192", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -354,7 +361,7 @@ using BoletoCinema;
                                         </a>
                                     </h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714525940", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714526133", async() => {
                 WriteLiteral(@"
                                         <div class=""cart-plus-minus"">
                                             <input class=""cart-plus-minus-box"" type=""text"" name=""qtybutton"" value=""2"">
@@ -385,7 +392,7 @@ using BoletoCinema;
                             <div class=""grid-inner"">
                                 <div class=""grid-thumb"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714528056", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "021c6e9f2b7f273ea22a1e7dd90ba8739191714528249", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -415,7 +422,7 @@ using BoletoCinema;
                                         </a>
                                     </h5>
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714529992", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "021c6e9f2b7f273ea22a1e7dd90ba8739191714530185", async() => {
                 WriteLiteral(@"
                                         <div class=""cart-plus-minus"">
                                             <input class=""cart-plus-minus-box"" type=""text"" name=""qtybutton"" value=""2"">

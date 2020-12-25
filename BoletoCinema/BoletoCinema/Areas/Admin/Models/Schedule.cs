@@ -12,11 +12,9 @@ namespace BoletoCinema.Areas.Admin.Models
         [Key]
         public int id { get; set; }
 
-        public int branch_id { get; set; }
         public int room_id { get; set; }
 
-        [ForeignKey("branch_id")]
-        public virtual Branch branch { get; set; }
+        [ForeignKey("room_id")]
         public virtual Room room { get; set; }
 
         public ICollection<Ticket> tickets { get; set; }
