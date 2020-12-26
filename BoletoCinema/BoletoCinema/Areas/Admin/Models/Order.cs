@@ -14,8 +14,6 @@ namespace BoletoCinema.Areas.Admin.Models
 
         public int user_id { get; set; }
 
-        public int ticket_id { get; set; }
-
         public double total_price { get; set; }
 
         public int status { get; set; }

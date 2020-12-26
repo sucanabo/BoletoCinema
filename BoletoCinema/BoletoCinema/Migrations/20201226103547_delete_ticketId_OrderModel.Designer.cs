@@ -4,14 +4,16 @@ using BoletoCinema.Areas.Admin.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    partial class BoletoContextModelSnapshot : ModelSnapshot
+    [Migration("20201226103547_delete_ticketId_OrderModel")]
+    partial class delete_ticketId_OrderModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

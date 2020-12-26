@@ -14,9 +14,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ticket_id)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.total_price)
             </th>
             <th>
@@ -34,9 +31,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ticket_id)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.total_price)
             </td>

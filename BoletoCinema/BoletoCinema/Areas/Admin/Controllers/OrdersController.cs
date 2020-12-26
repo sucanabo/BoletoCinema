@@ -58,7 +58,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,user_id,ticket_id,total_price,status,create_date")] Order order)
+        public async Task<IActionResult> Create([Bind("id,user_id,total_price,status,create_date")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,user_id,ticket_id,total_price,status,create_date")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("id,user_id,total_price,status,create_date")] Order order)
         {
             if (id != order.id)
             {
