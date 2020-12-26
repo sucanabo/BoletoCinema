@@ -1,6 +1,7 @@
 ﻿
 //inital value
 let seats = [];
+var room_id = 1;
 var colPerRow = 14;
 var row = parseInt(seats.length / colPerRow);
 var ticketPrice = 50;
@@ -9,7 +10,7 @@ var seatSelected = new Set();
 var dataSeatPos = new Set();
 var seat_container_single = document.querySelector(".seat-area2");
 //call API
-const uri = `https://localhost:44350/api/seats`;
+const uri = `https://localhost:44350/api/seats/getseatsbyroomid/${room_id}`;
 fetch(uri)
     .then(response => response.json())
     .then(data => _getData(data))
@@ -30,7 +31,7 @@ function _getData(data) {
 
 function checkStatus() {
     seats.forEach(item => {
-        seatStatus.unshift(item["status"]);
+        seatStatus.push(item["status"]);
     });
     var allSeat = document.querySelectorAll(".seat-area2 li.single-seat");
     for (let i = 0; i < allSeat.length; i++) {

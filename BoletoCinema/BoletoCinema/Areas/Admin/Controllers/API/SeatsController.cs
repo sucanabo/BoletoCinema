@@ -10,7 +10,7 @@ using BoletoCinema.Areas.Admin.Models;
 
 namespace BoletoCinema.Areas.Admin.Controllers.API
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class SeatsController : ControllerBase
     {
@@ -33,7 +33,6 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
         public async Task<ActionResult<Seat>> GetSeat(int id)
         {
             var seat = await _context.seats.FindAsync(id);
-
             if (seat == null)
             {
                 return NotFound();
@@ -41,7 +40,11 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
 
             return seat;
         }
-
+        [HttpGet("{id}")]
+        public async Task<IEnumerable<Seat>> GetSeatsByRoomId(int id)
+        {
+            return _context.seats.Where(s => s.room_id == id);
+        }
         // PUT: api/Seats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
