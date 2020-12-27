@@ -43,7 +43,7 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
         [HttpGet("{id}")]
         public async Task<IEnumerable<Seat>> GetSeatsByRoomId(int id)
         {
-            return _context.seats.Where(s => s.room_id == id);
+            return  _context.seats.Where(s => s.room_id == id);
         }
         // PUT: api/Seats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
