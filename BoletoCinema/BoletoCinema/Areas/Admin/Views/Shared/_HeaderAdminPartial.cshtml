@@ -1,8 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+    
 }
+@model BoletoCinema.Areas.Admin.Models.User;
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -209,8 +209,8 @@
                             <img src="~/Admin/assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                  width="40">
                             <span class="ml-2 d-none d-lg-inline-block">
-                                <span>Hello,</span> <span class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
-                                                                                                class="svg-icon"></i>
+                                <span>Hello,</span> <span class="text-dark">@Model.displayname</span> <i data-feather="chevron-down"
+                                                                                                         class="svg-icon"></i>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">

@@ -37,5 +37,6 @@ namespace BoletoCinema.Areas.Admin.Data
         public DbSet<Ticket> tickets { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<UserDiscount> userDiscounts { get; set; }
+        public object Response { get; internal set; }
     }
 }
