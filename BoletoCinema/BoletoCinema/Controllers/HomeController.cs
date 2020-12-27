@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BoletoCinema.Areas.Admin.Models;
+using BoletoCinema.Areas.Admin.Data;
 namespace BoletoCinema.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
 
