@@ -697,7 +697,6 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieGrid.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieSeatPlan.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\MovieTicketPlan.cshtml.g.cs
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Home\SignUp.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Shared\_HeaderPartial.cshtml.g.cs
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Shared\_HeadPartial.cshtml.g.cs
@@ -715,3 +714,17 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\BoletoCinema.dll
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\ref\BoletoCinema.dll
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\BoletoCinema.pdb
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\BoletoCinema.genruntimeconfig.cache
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Castle.Core.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Auth\SignUp.cshtml.g.cs
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNet.Identity.Owin.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
+D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Owin.dll

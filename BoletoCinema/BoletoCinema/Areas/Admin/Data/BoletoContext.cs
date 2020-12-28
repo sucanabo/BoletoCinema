@@ -12,7 +12,13 @@ namespace BoletoCinema.Areas.Admin.Data
     : base(options)
         {
         }
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Customize the ASP.NET Core Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Core Identity table names and more.
+            // Add your customizations after calling base.OnModelCreating(builder);
+        }
         public DbSet<Actor> actors { get; set; }
         public DbSet<Branch> branches { get; set; }
         public DbSet<Category> categories { get; set; }

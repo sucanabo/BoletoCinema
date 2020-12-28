@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    Layout = "_LayoutSimple";
-}
+﻿@model BoletoCinema.ViewModel.RegisterViewModel
 <div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
@@ -12,6 +7,7 @@
         </div>
     </div>
 </div>
+    <h1>@ViewData["mess"]</h1>
 <!-- ==========Preloader========== -->
 <!-- ==========Sign-In-Section========== -->
 <section class="account-section bg_img" data-background="~/User/assets/images/account/account-bg.jpg">
@@ -22,18 +18,26 @@
                     <span class="cate">welcome</span>
                     <h2 class="title">to Boleto </h2>
                 </div>
-                <form class="account-form">
+                <form class="account-form" method="post" asp-controller="Auth" asp-action="SignUp">
                     <div class="form-group">
-                        <label for="email1">Email<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Email" id="email1" required>
+                        <label asp-for="username">Username<span>*</span></label>
+                        <input asp-for="username" type="text" placeholder="Enter Your Username" id="username">
+                        <span asp-validation-for="username"></span>
                     </div>
                     <div class="form-group">
-                        <label for="pass1">Password<span>*</span></label>
-                        <input type="password" placeholder="Password" id="pass1" required>
+                        <label asp-for="email">Email<span>*</span></label>
+                        <input asp-for="email" type="email" placeholder="Enter Your Email" id="email">
+                        <span asp-validation-for="email"></span>
                     </div>
                     <div class="form-group">
-                        <label for="pass2">Confirm Password<span>*</span></label>
-                        <input type="password" placeholder="Password" id="pass2" required>
+                        <label asp-for="password">Password<span>*</span></label>
+                        <input asp-for="password" type="password" placeholder="Password" id="pass1">
+                        <span asp-validation-for="password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="confirmPassword">Confirm Password<span>*</span></label>
+                        <input asp-for="confirmPassword" type="password" placeholder="Password" id="pass2">
+                        <span asp-validation-for="confirmPassword"></span>
                     </div>
                     <div class="form-group checkgroup">
                         <input type="checkbox" id="bal" required checked>

@@ -15,7 +15,7 @@ namespace BoletoCinema.Areas.Admin.Data
         {
             if (!session.Session.TryGetValue("user",out byte[] _))
             {
-                return new User();
+                return null;
             }
             JObject us = JObject.Parse(session.Session.GetString("user"));
             User user = new User();

@@ -1,6 +1,7 @@
 ﻿@{
 
 }
+@model BoletoCinema.Areas.Admin.Models.User
 <header class="header-section">
     <div class="container">
         <div class="header-wrapper">
@@ -60,20 +61,26 @@
                 <li>
                     <a asp-controller="Home" asp-action="Contact">contact</a>
                 </li>
-
-                @if (User.Identity.IsAuthenticated)
+                @if (User.Identity.IsAuthenticated || Model != null)
                 {
                     <li>
-                        <a asp-controller="Auth" asp-action="SignOut">Sign out</a>
+                        <a href="#0">Hello,@Model.displayname </a>
+                        <ul class="submenu">
+                            <li>
+                                <a asp-controller="Home" asp-action="About">Infomation</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Auth" asp-action="SignOut">Sign out</a>
+                            </li>
+                        </ul>
                     </li>
+
 
                 }
                 else
                 {
                     <li class="header-button pr-0">
                         <a asp-controller="Home" asp-action="SignUp">join us</a>
-                    </li>
-                    <li class="header-button pr-0">
                         <a asp-controller="Auth" asp-action="Login">Login</a>
                     </li>
                 }

@@ -12,7 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
-
+using BoletoCinema.Areas.Admin.Models;
+using Microsoft.AspNetCore.Identity;
 namespace BoletoCinema
 {
     public class Startup
@@ -57,8 +58,6 @@ namespace BoletoCinema
 
             services.AddDbContext<BoletoContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BoletoContext")));
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,7 +85,6 @@ namespace BoletoCinema
                 endpoints.MapControllerRoute(
                    name: "Admin",
                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-
                 endpoints.MapControllerRoute(
                    name: "default",
                    pattern: "{controller=Home}/{action=Index}/{id?}");
