@@ -10,52 +10,49 @@ using BoletoCinema.Areas.Admin.Models;
 
 namespace BoletoCinema.Areas.Admin.Controllers.API
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class SeatsController : ControllerBase
+    public class ImagesController : ControllerBase
     {
         private readonly BoletoContext _context;
 
-        public SeatsController(BoletoContext context)
+        public ImagesController(BoletoContext context)
         {
             _context = context;
         }
 
-        // GET: api/Seats
+        // GET: api/Images
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Seat>>> Getseats()
+        public async Task<ActionResult<IEnumerable<Image>>> Getimages()
         {
-            return await _context.seats.ToListAsync();
+            return await _context.images.ToListAsync();
         }
 
-        // GET: api/Seats/5
+        // GET: api/Images/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Seat>> GetSeat(int id)
+        public async Task<ActionResult<Image>> GetImage(int id)
         {
-            var seat = await _context.seats.FindAsync(id);
-            if (seat == null)
+            var image = await _context.images.FindAsync(id);
+
+            if (image == null)
             {
                 return NotFound();
             }
 
-            return seat;
+            return image;
         }
-        [HttpGet("{id}")]
-        public IEnumerable<Seat> GetSeatsByRoomId(int id)
-        {
-            return  _context.seats.Where(s => s.room_id == id);
-        }
-        // PUT: api/Seats/5
+
+        // PUT: api/Images/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSeat(int id, Seat seat)
+        public async Task<IActionResult> PutImage(int id, Image image)
         {
-            if (id != seat.id)
+            if (id != image.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(seat).State = EntityState.Modified;
+            _context.Entry(image).State = EntityState.Modified;
 
             try
             {
@@ -63,7 +60,7 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SeatExists(id))
+                if (!ImageExists(id))
                 {
                     return NotFound();
                 }
@@ -76,36 +73,36 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
             return NoContent();
         }
 
-        // POST: api/Seats
+        // POST: api/Images
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Seat>> PostSeat(Seat seat)
+        public async Task<ActionResult<Image>> PostImage(Image image)
         {
-            _context.seats.Add(seat);
+            _context.images.Add(image);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSeat", new { id = seat.id }, seat);
+            return CreatedAtAction("GetImage", new { id = image.id }, image);
         }
 
-        // DELETE: api/Seats/5
+        // DELETE: api/Images/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSeat(int id)
+        public async Task<IActionResult> DeleteImage(int id)
         {
-            var seat = await _context.seats.FindAsync(id);
-            if (seat == null)
+            var image = await _context.images.FindAsync(id);
+            if (image == null)
             {
                 return NotFound();
             }
 
-            _context.seats.Remove(seat);
+            _context.images.Remove(image);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SeatExists(int id)
+        private bool ImageExists(int id)
         {
-            return _context.seats.Any(e => e.id == id);
+            return _context.images.Any(e => e.id == id);
         }
     }
 }

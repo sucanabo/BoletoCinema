@@ -41,6 +41,7 @@ namespace BoletoCinema.Controllers
         public async Task<IActionResult> SignOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
         //Sign up

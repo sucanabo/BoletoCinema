@@ -11,7 +11,7 @@ namespace BoletoCinema.Controllers
     {
         public IActionResult Index()
         {
-            User user = Ultils.getCurrentUser(HttpContext);
+            User user=Ultils.getCurrentUser(HttpContext);
             return View(user);
         }
 
@@ -20,7 +20,8 @@ namespace BoletoCinema.Controllers
         {
 
             ViewData["Title"] = "MovieGrid";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
       
@@ -28,26 +29,30 @@ namespace BoletoCinema.Controllers
         public IActionResult MovieDetail()
         {
             ViewData["Title"] = "MovieDetail";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
 
         public IActionResult MovieTicketPlan()
         {
             ViewData["Title"] = "MovieTicketPlan";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult MovieSeatPlan()
         {
             ViewData["Title"] = "MovieSeatPlan";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
         public IActionResult MovieCheckout()
         {
 
             ViewData["Title"] = "MovieCheckout";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         
@@ -55,37 +60,43 @@ namespace BoletoCinema.Controllers
         public IActionResult About()
         {
             ViewData["Title"] = "About";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult AppDownload()
         {
             ViewData["Title"] = "AppDownload";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult SignIn()
         {
             ViewData["Title"] = "SignIn";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult SignUp()
         {
             ViewData["Title"] = "SignUp";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult Error404()
         {
             ViewData["Title"] = "Error404";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
 
         public IActionResult Contact()
         {
             ViewData["Title"] = "Contact";
-            return View();
+            User user = Ultils.getCurrentUser(HttpContext);
+            return View(user);
         }
     }
 }

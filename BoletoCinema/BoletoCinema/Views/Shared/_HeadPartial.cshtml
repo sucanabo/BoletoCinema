@@ -63,17 +63,25 @@
                 </li>
                 @if (User.Identity.IsAuthenticated || Model != null)
                 {
-                    <li>
+            <li>
+
+                    @if (Model.id != null)
+                    {
                         <a href="#0">Hello,@Model.displayname </a>
-                        <ul class="submenu">
-                            <li>
-                                <a asp-controller="Home" asp-action="About">Infomation</a>
-                            </li>
-                            <li>
-                                <a asp-controller="Auth" asp-action="SignOut">Sign out</a>
-                            </li>
-                        </ul>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="#0">Hello,User </a>
+                    }
+                <ul class="submenu">
+                    <li>
+                        <a asp-controller="Home" asp-action="About">Infomation</a>
                     </li>
+                    <li>
+                        <a asp-controller="Auth" asp-action="SignOut">Sign out</a>
+                    </li>
+                </ul>
+            </li>
 
 
                 }

@@ -721,10 +721,3 @@ D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extens
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Castle.Core.dll
 D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\obj\Debug\net5.0\Razor\Views\Auth\SignUp.cshtml.g.cs
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.AspNet.Identity.Owin.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
-D:\DoAn\BoletoCinema\BoletoCinema\BoletoCinema\bin\Debug\net5.0\Owin.dll

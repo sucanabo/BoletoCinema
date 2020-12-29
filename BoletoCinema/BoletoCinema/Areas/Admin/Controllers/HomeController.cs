@@ -15,12 +15,17 @@ namespace BoletoCinema.Areas.Admin.Controllers
         public IActionResult Index()
         {
             User user = Ultils.getCurrentUser(HttpContext);
-            if(user.rule != 1)
+            if (user != null)
             {
-                var url = Url.RouteUrl("default", new { Controller = "Auth", action = "Login"});
-                return Redirect(url);
+                if (user.rule != 1)
+                {
+                    var url = Url.RouteUrl("default", new { Controller = "Auth", action = "Login" });
+                    return Redirect(url);
+                }
+                return View(user);
             }
-            return View(user);
+            else return RedirectToAction("Login","Auth",new { area="default"});
+            
         }
 
         public IActionResult Post()

@@ -10,52 +10,49 @@ using BoletoCinema.Areas.Admin.Models;
 
 namespace BoletoCinema.Areas.Admin.Controllers.API
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class SeatsController : ControllerBase
+    public class Movie_ActorController : ControllerBase
     {
         private readonly BoletoContext _context;
 
-        public SeatsController(BoletoContext context)
+        public Movie_ActorController(BoletoContext context)
         {
             _context = context;
         }
 
-        // GET: api/Seats
+        // GET: api/Movie_Actor
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Seat>>> Getseats()
+        public async Task<ActionResult<IEnumerable<Movie_Actor>>> Getmovie_Actors()
         {
-            return await _context.seats.ToListAsync();
+            return await _context.movie_Actors.ToListAsync();
         }
 
-        // GET: api/Seats/5
+        // GET: api/Movie_Actor/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Seat>> GetSeat(int id)
+        public async Task<ActionResult<Movie_Actor>> GetMovie_Actor(int id)
         {
-            var seat = await _context.seats.FindAsync(id);
-            if (seat == null)
+            var movie_Actor = await _context.movie_Actors.FindAsync(id);
+
+            if (movie_Actor == null)
             {
                 return NotFound();
             }
 
-            return seat;
+            return movie_Actor;
         }
-        [HttpGet("{id}")]
-        public IEnumerable<Seat> GetSeatsByRoomId(int id)
-        {
-            return  _context.seats.Where(s => s.room_id == id);
-        }
-        // PUT: api/Seats/5
+
+        // PUT: api/Movie_Actor/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSeat(int id, Seat seat)
+        public async Task<IActionResult> PutMovie_Actor(int id, Movie_Actor movie_Actor)
         {
-            if (id != seat.id)
+            if (id != movie_Actor.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(seat).State = EntityState.Modified;
+            _context.Entry(movie_Actor).State = EntityState.Modified;
 
             try
             {
@@ -63,7 +60,7 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SeatExists(id))
+                if (!Movie_ActorExists(id))
                 {
                     return NotFound();
                 }
@@ -76,36 +73,36 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
             return NoContent();
         }
 
-        // POST: api/Seats
+        // POST: api/Movie_Actor
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Seat>> PostSeat(Seat seat)
+        public async Task<ActionResult<Movie_Actor>> PostMovie_Actor(Movie_Actor movie_Actor)
         {
-            _context.seats.Add(seat);
+            _context.movie_Actors.Add(movie_Actor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSeat", new { id = seat.id }, seat);
+            return CreatedAtAction("GetMovie_Actor", new { id = movie_Actor.id }, movie_Actor);
         }
 
-        // DELETE: api/Seats/5
+        // DELETE: api/Movie_Actor/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSeat(int id)
+        public async Task<IActionResult> DeleteMovie_Actor(int id)
         {
-            var seat = await _context.seats.FindAsync(id);
-            if (seat == null)
+            var movie_Actor = await _context.movie_Actors.FindAsync(id);
+            if (movie_Actor == null)
             {
                 return NotFound();
             }
 
-            _context.seats.Remove(seat);
+            _context.movie_Actors.Remove(movie_Actor);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SeatExists(int id)
+        private bool Movie_ActorExists(int id)
         {
-            return _context.seats.Any(e => e.id == id);
+            return _context.movie_Actors.Any(e => e.id == id);
         }
     }
 }
