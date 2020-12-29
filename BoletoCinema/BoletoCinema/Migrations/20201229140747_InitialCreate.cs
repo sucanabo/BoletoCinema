@@ -94,7 +94,8 @@ namespace BoletoCinema.Migrations
                     displayname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    avatar = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    rule = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -250,7 +251,6 @@ namespace BoletoCinema.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<int>(type: "int", nullable: false),
-                    ticket_id = table.Column<int>(type: "int", nullable: false),
                     total_price = table.Column<double>(type: "float", nullable: false),
                     status = table.Column<int>(type: "int", nullable: false),
                     create_date = table.Column<DateTime>(type: "datetime2", nullable: false)

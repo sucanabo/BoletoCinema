@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201225032828_InitialCreate")]
+    [Migration("20201229140747_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -257,9 +257,6 @@ namespace BoletoCinema.Migrations
                     b.Property<int>("status")
                         .HasColumnType("int");
 
-                    b.Property<int>("ticket_id")
-                        .HasColumnType("int");
-
                     b.Property<double>("total_price")
                         .HasColumnType("float");
 
@@ -490,6 +487,9 @@ namespace BoletoCinema.Migrations
 
                     b.Property<string>("password")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rule")
+                        .HasColumnType("int");
 
                     b.Property<string>("username")
                         .HasColumnType("nvarchar(max)");

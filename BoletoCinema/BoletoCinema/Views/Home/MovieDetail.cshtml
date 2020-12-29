@@ -8,15 +8,15 @@
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-thumb">
-                <img src="https://img.youtube.com/vi/3od-kQMTZ9M/0.jpg" alt="movie">
-                <a href="https://www.youtube.com/watch?v=3od-kQMTZ9M" class="video-popup">
+                <img src="~/User/assets/images/movie/venus.jpg" alt="movie">
+                <a href="https://www.youtube.com/embed/KGeBMAgc46E" class="video-popup">
                     <img src="~/User/assets/images/movie/video-button.png" alt="movie">
                 </a>
             </div>
             <div class="details-banner-content offset-lg-3">
                 <h3 class="title">Venus</h3>
                 <div class="tags">
-                    
+
                 </div>
                 <a href="#0" class="button">horror</a>
                 <div class="social-and-duration">
@@ -88,9 +88,9 @@
                     <p><a href="#0">Rate It</a></p>
                 </div>
             </div>
-          
-                <a asp-controller="Home" asp-action="MovieTicketPlan" asp-route-id="@ViewData["movie_id"]" class="custom-button">book tickets</a>
-             
+
+            <a asp-controller="Home" asp-action="MovieTicketPlan" asp-route-id="@ViewData["movie_id"]" class="custom-button">book tickets</a>
+
 
         </div>
     </div>
@@ -102,7 +102,7 @@
         <div class="row justify-content-center flex-wrap-reverse mb--50">
             <div class="col-lg-3 col-sm-10 col-md-6 mb-50">
                 <div class="widget-1 widget-tags">
-                   
+
                 </div>
                 <div class="widget-1 widget-offer">
                     <h3 class="title">Applicable offer</h3>
@@ -160,36 +160,16 @@
                 <div class="movie-details">
                     <h3 class="title">photos</h3>
                     <div class="details-photos owl-carousel">
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details01.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details01.jpg" alt="movie">
-                            </a>
-                        </div>
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details02.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details02.jpg" alt="movie">
-                            </a>
-                        </div>
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details03.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details03.jpg" alt="movie">
-                            </a>
-                        </div>
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details01.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details01.jpg" alt="movie">
-                            </a>
-                        </div>
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details02.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details02.jpg" alt="movie">
-                            </a>
-                        </div>
-                        <div class="thumb">
-                            <a href="./assets/images/movie/movie-details03.jpg" class="img-pop">
-                                <img src="~/User/assets/images/movie/movie-details03.jpg" alt="movie">
-                            </a>
-                        </div>
+                        @foreach (var item in ViewBag.ImageFilm)
+                        {
+                            <div class="thumb">
+                                <a href="./assets/images/movie/movie-details01.jpg" class="img-pop">
+                                    <img src="@item.GetType().GetProperty("path").GetValue(item, null)" alt="movie">
+                                </a>
+                            </div>
+
+                        }
+
                     </div>
                     <div class="tab summery-review">
                         <ul class="tab-menu">
@@ -223,7 +203,7 @@
                                             </div>
                                             <div class="cast-content">
                                                 <h6 class="cast-title"><a href="#0">Bill Hader</a></h6>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="cast-item">
@@ -234,7 +214,7 @@
                                             </div>
                                             <div class="cast-content">
                                                 <h6 class="cast-title"><a href="#0">nora hardy</a></h6>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="cast-item">
@@ -245,7 +225,7 @@
                                             </div>
                                             <div class="cast-content">
                                                 <h6 class="cast-title"><a href="#0">alvin peters</a></h6>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="cast-item">
@@ -256,13 +236,13 @@
                                             </div>
                                             <div class="cast-content">
                                                 <h6 class="cast-title"><a href="#0">josh potter</a></h6>
-                                                
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item">
-                                   
+
                                 </div>
                             </div>
                             <div class="tab-item">

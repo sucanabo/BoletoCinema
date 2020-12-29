@@ -2,10 +2,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-@model IEnumerable<BoletoCinema.Areas.Admin.Models.Movie>
-
-@{
-}
+@model  IEnumerable<BoletoCinema.Areas.Admin.Models.Movie>
+                                                          
 <section class="banner-section">
     <div class="banner-bg bg_img bg-fixed" data-background="~/User/assets/images/banner/banner02.jpg"></div>
     <div class="container">
@@ -353,18 +351,20 @@
                     <div class="tab-area">
                         <div class="tab-item active">
                             <div class="row mb-10 justify-content-center">
-                                @foreach (var m in Model)
+                                @foreach (var m in ViewBag.Movies)
                                 {
                                     <div class="col-sm-6 col-lg-4">
                                         <div class="movie-grid">
                                             <div class="movie-thumb c-thumb">
                                                 <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@m.id">
-                                                    <img src="~/User/assets/images/movie/movie01.jpg" alt="movie">
+                                                    
+                                                    <img src="~/img/films/poster_@{{@m.name}}.jpg" alt="movie">
+
                                                 </a>
                                             </div>
                                             <div class="movie-content bg-one">
                                                 <h5 class="title m-0">
-                                                    <a asp-controller="Home" asp-action="MovieDetail">alone</a>
+                                                    <a asp-controller="Home" asp-action="MovieDetail">@m.name</a>
                                                 </h5>
                                                 <ul class="movie-rating-percent">
                                                     <li>
