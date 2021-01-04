@@ -9,6 +9,12 @@ namespace BoletoCinema.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BoletoContext _db;
+
+        public HomeController(BoletoContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
             User user=Ultils.getCurrentUser(HttpContext);
@@ -21,10 +27,57 @@ namespace BoletoCinema.Controllers
 
             ViewData["Title"] = "MovieGrid";
             User user = Ultils.getCurrentUser(HttpContext);
+            ViewBag.Movies = _db.movies.ToArray();
             return View(user);
         }
+        [Route("Home/MovieDetail/{id}")]
+        public IActionResult MovieDetail(int? id)
+        {
+            ViewBag.Movie = _db.movies.Where(m => m.id == id).ToArray();
+            var listTag = from ct in _db.categories
+                          from mct in _db.movie_Categories
+                          where ct.id == mct.category_id && mct.movie_id == id
+                          select ct.name;
+            var listCast = from ac in _db.actors
+                           from mac in _db.movie_Actors
+                           where ac.id == mac.actor_id && mac.movie_id == id
+                           select ac;
+            ViewBag.listCast = listCast.ToArray();
+            ViewBag.listTag = listTag.ToArray();
+            ViewData["movie_id"] = id;
+            return View();
+        }
 
-      
+        [Route("Home/MovieTicketPlan/{id}")]
+        public IActionResult MovieTicketPlan(int? id)
+        {
+
+            var listBranch = from b in _db.branches
+                             from m in _db.movies
+                             from sd in _db.schedules
+                             from r in _db.rooms
+                             where m.id == id && sd.movie_id == id && sd.movie_id == m.id && sd.room_id == r.id && r.branch_id == b.id
+                             select new { b.name, b.id, sd.movie_id };
+
+            var listTime = from m in _db.movies
+                           from sd in _db.schedules
+                           from b in _db.branches
+                           from r in _db.rooms
+                           where m.id == id && m.id == sd.movie_id && sd.room_id == r.id && r.branch_id == b.id
+                           select new { sd.id, sd.start_time, r.branch_id, sd.room_id};
+
+
+
+            ViewData["Title"] = "MovieTicketPlan";
+            ViewData["_movie_id"] = id;
+
+            ViewBag.Branch = listBranch;
+            ViewBag.Time = listTime;
+
+
+
+            return View();
+        }
 
         public IActionResult MovieDetail()
         {
