@@ -17,9 +17,6 @@
                 @Html.DisplayNameFor(model => model.position)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.status)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.room)
             </th>
             <th></th>
@@ -32,10 +29,7 @@
                 @Html.DisplayFor(modelItem => item.position)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.room.id)
+                @Html.DisplayFor(modelItem => item.room.name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

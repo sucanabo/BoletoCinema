@@ -1,7 +1,8 @@
 ﻿
 //inital value
+let sch_id = 1;
 let seats = [];
-var room_id = 1;
+//var room_id = 1;
 var colPerRow = 14;
 var row = parseInt(seats.length / colPerRow);
 var ticketPrice = 50;
@@ -10,7 +11,7 @@ var seatSelected = new Set();
 var dataSeatPos = new Set();
 var seat_container_single = document.querySelector(".seat-area2");
 //call API
-const uri = `https://localhost:44350/api/seats/getseatsbyroomid/${room_id}`;
+const uri = `../../api/seats/GetSeatsBySchedule/${sch_id}`;
 fetch(uri)
     .then(response => response.json())
     .then(data => _getData(data))
@@ -28,18 +29,28 @@ function _getData(data) {
         addSession();
     });
 }
-
-function checkStatus() {
+const st_uri = `../../api/Seat_Status/GetSeat_StatusBySchedule/${sch_id}`;
+async function checkStatus() {
+    let query = await fetch(st_uri);
+    console.log(query);
+    let st_data = await query.json();
+    console.log('data ne:', st_data);
     seats.forEach(item => {
-        seatStatus.push(item["status"]);
+        let flag = 0;
+        st_data.forEach(item2 => {
+            if (item['id'] == item2['seat_id']) {
+                flag = 1;
+            }
+        });
+        seatStatus.push(flag);
     });
+    console.log(seatStatus);
     var allSeat = document.querySelectorAll(".seat-area2 li.single-seat");
     for (let i = 0; i < allSeat.length; i++) {
         if (seatStatus[i] == 1) {
             allSeat[i].removeChild(allSeat[i].childNodes[1]);
             allSeat[i].classList.remove("seat-free");
             allSeat[i].querySelector('img').src = "../User/assets/images/movie/seat01.png";
-            //allSeat[i].removeEventListener("click", SeatAction);
         }
     }
 }

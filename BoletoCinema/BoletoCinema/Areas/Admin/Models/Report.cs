@@ -11,7 +11,9 @@ namespace BoletoCinema.Areas.Admin.Models
     {
         [Key]
         public int id { get; set; }
+        [Required]
         public string reason { get; set; }
+        [Required]
         public string content { get; set; }
         public int review_id { get; set; }
         public string create_date { get; set; }

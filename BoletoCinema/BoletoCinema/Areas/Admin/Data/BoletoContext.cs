@@ -24,7 +24,6 @@ namespace BoletoCinema.Areas.Admin.Data
         public DbSet<Category> categories { get; set; }
         public DbSet<ContactForm> contactForms { get; set; }
         public DbSet<Discount> discounts { get; set; }
-        public DbSet<Image> images { get; set; }
         public DbSet<Movie> movies { get; set; }
         public DbSet<Movie_Actor> movie_Actors { get; set; }
         public DbSet<Movie_Category> movie_Categories { get; set; }
@@ -39,10 +38,10 @@ namespace BoletoCinema.Areas.Admin.Data
         public DbSet<Room> rooms { get; set; }
         public DbSet<Schedule> schedules { get; set; }
         public DbSet<Seat> seats { get; set; }
-        public DbSet<Session> sessions { get; set; }
         public DbSet<Ticket> tickets { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<UserDiscount> userDiscounts { get; set; }
+        public DbSet<Seat_Status> seat_status { get; set; }
         public object Response { get; internal set; }
     }
 }

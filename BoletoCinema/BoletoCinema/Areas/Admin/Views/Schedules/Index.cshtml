@@ -16,6 +16,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.room)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start_time)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -23,7 +29,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.room.id)
+                @Html.DisplayFor(modelItem => item.room.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.movie.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.start_time)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

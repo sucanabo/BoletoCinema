@@ -49,7 +49,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Rooms/Create
         public IActionResult Create()
         {
-            ViewData["branch_id"] = new SelectList(_context.branches, "id", "id");
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["branch_id"] = new SelectList(_context.branches, "id", "id", room.branch_id);
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address", room.branch_id);
             return View(room);
         }
 
@@ -83,7 +83,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["branch_id"] = new SelectList(_context.branches, "id", "id", room.branch_id);
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address", room.branch_id);
             return View(room);
         }
 
@@ -119,7 +119,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["branch_id"] = new SelectList(_context.branches, "id", "id", room.branch_id);
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address", room.branch_id);
             return View(room);
         }
 

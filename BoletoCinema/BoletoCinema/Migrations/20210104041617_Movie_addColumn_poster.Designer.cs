@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20201225032828_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210104041617_Movie_addColumn_poster")]
+    partial class Movie_addColumn_poster
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,9 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("id");
 
@@ -47,10 +49,14 @@ namespace BoletoCinema.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("address")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("status")
                         .HasColumnType("int");
@@ -68,7 +74,9 @@ namespace BoletoCinema.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("status")
                         .HasColumnType("int");
@@ -86,6 +94,7 @@ namespace BoletoCinema.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("content")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("create_date")
@@ -115,7 +124,9 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("status")
                         .HasColumnType("int");
@@ -123,29 +134,6 @@ namespace BoletoCinema.Migrations
                     b.HasKey("id");
 
                     b.ToTable("discounts");
-                });
-
-            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Image", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("movie_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("path")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("status")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("movie_id");
-
-                    b.ToTable("images");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Movie", b =>
@@ -159,6 +147,11 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("poster")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("published_date")
@@ -168,6 +161,7 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("summery")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("trailer_path")
@@ -257,9 +251,6 @@ namespace BoletoCinema.Migrations
                     b.Property<int>("status")
                         .HasColumnType("int");
 
-                    b.Property<int>("ticket_id")
-                        .HasColumnType("int");
-
                     b.Property<double>("total_price")
                         .HasColumnType("float");
 
@@ -281,12 +272,14 @@ namespace BoletoCinema.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("content")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("create_date")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("reason")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("review_id")
@@ -310,6 +303,7 @@ namespace BoletoCinema.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("content")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("create_date")
@@ -344,7 +338,9 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("status")
                         .HasColumnType("int");
@@ -363,10 +359,18 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("movie_id")
+                        .HasColumnType("int");
+
                     b.Property<int>("room_id")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("start_time")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("id");
+
+                    b.HasIndex("movie_id");
 
                     b.HasIndex("room_id");
 
@@ -386,9 +390,6 @@ namespace BoletoCinema.Migrations
                     b.Property<int>("room_id")
                         .HasColumnType("int");
 
-                    b.Property<int>("status")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
                     b.HasIndex("room_id");
@@ -396,35 +397,29 @@ namespace BoletoCinema.Migrations
                     b.ToTable("seats");
                 });
 
-            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Session", b =>
+            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Seat_Status", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<DateTime>("end_time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("movie_id")
+                    b.Property<int>("seat_id")
                         .HasColumnType("int");
 
-                    b.Property<int>("schedule_id")
+                    b.Property<int>("status")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("show_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("start_time")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("ticket_id")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("movie_id");
+                    b.HasIndex("seat_id");
 
-                    b.HasIndex("schedule_id");
+                    b.HasIndex("ticket_id");
 
-                    b.ToTable("sessions");
+                    b.ToTable("seat_status");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Ticket", b =>
@@ -434,7 +429,7 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("Sessionid")
+                    b.Property<int?>("Roomid")
                         .HasColumnType("int");
 
                     b.Property<int?>("order_id")
@@ -443,28 +438,16 @@ namespace BoletoCinema.Migrations
                     b.Property<double>("price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("room_id")
-                        .HasColumnType("int");
-
                     b.Property<int?>("schedule_id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("seat_id")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("Sessionid");
+                    b.HasIndex("Roomid");
 
                     b.HasIndex("order_id");
 
-                    b.HasIndex("room_id");
-
                     b.HasIndex("schedule_id");
-
-                    b.HasIndex("seat_id")
-                        .IsUnique()
-                        .HasFilter("[seat_id] IS NOT NULL");
 
                     b.ToTable("tickets");
                 });
@@ -483,16 +466,26 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("displayname")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("password")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("rule")
+                        .HasColumnType("int");
 
                     b.Property<string>("username")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("id");
 
@@ -530,17 +523,6 @@ namespace BoletoCinema.Migrations
                         .IsRequired();
 
                     b.Navigation("user");
-                });
-
-            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Image", b =>
-                {
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Movie", "movie")
-                        .WithMany("images")
-                        .HasForeignKey("movie_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("movie");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Movie_Actor", b =>
@@ -625,7 +607,7 @@ namespace BoletoCinema.Migrations
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Review", b =>
                 {
                     b.HasOne("BoletoCinema.Areas.Admin.Models.Movie", "movie")
-                        .WithMany()
+                        .WithMany("reviews")
                         .HasForeignKey("movie_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -654,11 +636,19 @@ namespace BoletoCinema.Migrations
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Schedule", b =>
                 {
+                    b.HasOne("BoletoCinema.Areas.Admin.Models.Movie", "movie")
+                        .WithMany("schedules")
+                        .HasForeignKey("movie_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BoletoCinema.Areas.Admin.Models.Room", "room")
                         .WithMany("schedules")
                         .HasForeignKey("room_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("movie");
 
                     b.Navigation("room");
                 });
@@ -674,54 +664,42 @@ namespace BoletoCinema.Migrations
                     b.Navigation("room");
                 });
 
-            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Session", b =>
+            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Seat_Status", b =>
                 {
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Movie", "movie")
-                        .WithMany("ListSession")
-                        .HasForeignKey("movie_id")
+                    b.HasOne("BoletoCinema.Areas.Admin.Models.Seat", "Seat")
+                        .WithMany("seat_Statuses")
+                        .HasForeignKey("seat_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Schedule", "schedule")
-                        .WithMany()
-                        .HasForeignKey("schedule_id")
+                    b.HasOne("BoletoCinema.Areas.Admin.Models.Ticket", "Ticket")
+                        .WithMany("seat_Statuses")
+                        .HasForeignKey("ticket_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("movie");
+                    b.Navigation("Seat");
 
-                    b.Navigation("schedule");
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Ticket", b =>
                 {
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Session", null)
+                    b.HasOne("BoletoCinema.Areas.Admin.Models.Room", null)
                         .WithMany("tickets")
-                        .HasForeignKey("Sessionid");
+                        .HasForeignKey("Roomid");
 
                     b.HasOne("BoletoCinema.Areas.Admin.Models.Order", "order")
                         .WithMany("tickets")
                         .HasForeignKey("order_id");
 
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Room", "room")
-                        .WithMany("tickets")
-                        .HasForeignKey("room_id");
-
                     b.HasOne("BoletoCinema.Areas.Admin.Models.Schedule", "schedule")
                         .WithMany("tickets")
                         .HasForeignKey("schedule_id");
 
-                    b.HasOne("BoletoCinema.Areas.Admin.Models.Seat", "seat")
-                        .WithOne("tickets")
-                        .HasForeignKey("BoletoCinema.Areas.Admin.Models.Ticket", "seat_id");
-
                     b.Navigation("order");
 
-                    b.Navigation("room");
-
                     b.Navigation("schedule");
-
-                    b.Navigation("seat");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.UserDiscount", b =>
@@ -767,15 +745,15 @@ namespace BoletoCinema.Migrations
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Movie", b =>
                 {
-                    b.Navigation("images");
-
-                    b.Navigation("ListSession");
-
                     b.Navigation("movie_Actors");
 
                     b.Navigation("movie_Categories");
 
                     b.Navigation("movieDiscounts");
+
+                    b.Navigation("reviews");
+
+                    b.Navigation("schedules");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Order", b =>
@@ -804,12 +782,12 @@ namespace BoletoCinema.Migrations
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Seat", b =>
                 {
-                    b.Navigation("tickets");
+                    b.Navigation("seat_Statuses");
                 });
 
-            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Session", b =>
+            modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.Ticket", b =>
                 {
-                    b.Navigation("tickets");
+                    b.Navigation("seat_Statuses");
                 });
 
             modelBuilder.Entity("BoletoCinema.Areas.Admin.Models.User", b =>

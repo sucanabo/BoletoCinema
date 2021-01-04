@@ -11,16 +11,14 @@ namespace BoletoCinema.Areas.Admin.Models
     {
         [Key]
         public int id { get; set; }
-
+        
         public int room_id { get; set; }
 
         public string position { get; set; }
 
-        public int status { get; set; }
-
         [ForeignKey("room_id")]
         public virtual Room room { get; set; }
 
-       public Ticket tickets { get; set; }
+        public ICollection<Seat_Status> seat_Statuses { get; set; }
     }
 }

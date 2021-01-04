@@ -11,9 +11,16 @@ namespace BoletoCinema.Areas.Admin.Models
     {
         [Key]
         public int id { get; set; }
+        [Required]
+        [StringLength(255)]
         public string username { get; set; }
+        [Required]
+        [StringLength(255)]
         public string password { get; set; }
+        [Required]
+        [StringLength(255)]
         public string displayname { get; set; }
+        [Required]
         public string email { get; set; }
         public DateTime birthday { get; set; }
         public string avatar { get; set; }

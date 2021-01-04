@@ -23,7 +23,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Schedules
         public async Task<IActionResult> Index()
         {
-            var boletoContext = _context.schedules.Include(s => s.room);
+            var boletoContext = _context.schedules.Include(s => s.movie).Include(s => s.room);
             return View(await boletoContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
             }
 
             var schedule = await _context.schedules
+                .Include(s => s.movie)
                 .Include(s => s.room)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (schedule == null)
@@ -49,7 +50,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Schedules/Create
         public IActionResult Create()
         {
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id");
+            ViewData["movie_id"] = new SelectList(_context.movies, "id", "name");
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name");
             return View();
         }
 
@@ -58,7 +60,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,room_id")] Schedule schedule)
+        public async Task<IActionResult> Create([Bind("id,room_id,movie_id,start_time")] Schedule schedule)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +68,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", schedule.room_id);
+            ViewData["movie_id"] = new SelectList(_context.movies, "id", "name", schedule.movie_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", schedule.room_id);
             return View(schedule);
         }
 
@@ -83,7 +86,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", schedule.room_id);
+            ViewData["movie_id"] = new SelectList(_context.movies, "id", "name", schedule.movie_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", schedule.room_id);
             return View(schedule);
         }
 
@@ -92,7 +96,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,room_id")] Schedule schedule)
+        public async Task<IActionResult> Edit(int id, [Bind("id,room_id,movie_id,start_time")] Schedule schedule)
         {
             if (id != schedule.id)
             {
@@ -119,7 +123,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", schedule.room_id);
+            ViewData["movie_id"] = new SelectList(_context.movies, "id", "name", schedule.movie_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", schedule.room_id);
             return View(schedule);
         }
 
@@ -132,6 +137,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
             }
 
             var schedule = await _context.schedules
+                .Include(s => s.movie)
                 .Include(s => s.room)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (schedule == null)

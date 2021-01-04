@@ -12,8 +12,11 @@ namespace BoletoCinema.Areas.Admin.Models
         [Key]
         public int id { get; set; }
         public int user_id { get; set; }
+        [Required]
         public string content { get; set; }
+        [Required]
         public int status { get; set; }
+        [Required]
         public DateTime create_date { get; set; }
         [ForeignKey("user_id")]
         public virtual User user { get; set; }

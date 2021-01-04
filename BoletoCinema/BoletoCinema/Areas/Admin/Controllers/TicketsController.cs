@@ -23,7 +23,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Tickets
         public async Task<IActionResult> Index()
         {
-            var boletoContext = _context.tickets.Include(t => t.order).Include(t => t.room).Include(t => t.schedule).Include(t => t.seat);
+            var boletoContext = _context.tickets.Include(t => t.order).Include(t => t.schedule);
             return View(await boletoContext.ToListAsync());
         }
 
@@ -37,9 +37,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
 
             var ticket = await _context.tickets
                 .Include(t => t.order)
-                .Include(t => t.room)
                 .Include(t => t.schedule)
-                .Include(t => t.seat)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (ticket == null)
             {
@@ -53,9 +51,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["order_id"] = new SelectList(_context.orders, "id", "id");
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id");
             ViewData["schedule_id"] = new SelectList(_context.schedules, "id", "id");
-            ViewData["seat_id"] = new SelectList(_context.seats, "id", "id");
             return View();
         }
 
@@ -64,7 +60,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,order_id,room_id,seat_id,schedule_id,price")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("id,order_id,schedule_id,price")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -73,9 +69,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["order_id"] = new SelectList(_context.orders, "id", "id", ticket.order_id);
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", ticket.room_id);
             ViewData["schedule_id"] = new SelectList(_context.schedules, "id", "id", ticket.schedule_id);
-            ViewData["seat_id"] = new SelectList(_context.seats, "id", "id", ticket.seat_id);
             return View(ticket);
         }
 
@@ -93,9 +87,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["order_id"] = new SelectList(_context.orders, "id", "id", ticket.order_id);
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", ticket.room_id);
             ViewData["schedule_id"] = new SelectList(_context.schedules, "id", "id", ticket.schedule_id);
-            ViewData["seat_id"] = new SelectList(_context.seats, "id", "id", ticket.seat_id);
             return View(ticket);
         }
 
@@ -104,7 +96,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,order_id,room_id,seat_id,schedule_id,price")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("id,order_id,schedule_id,price")] Ticket ticket)
         {
             if (id != ticket.id)
             {
@@ -132,9 +124,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["order_id"] = new SelectList(_context.orders, "id", "id", ticket.order_id);
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", ticket.room_id);
             ViewData["schedule_id"] = new SelectList(_context.schedules, "id", "id", ticket.schedule_id);
-            ViewData["seat_id"] = new SelectList(_context.seats, "id", "id", ticket.seat_id);
             return View(ticket);
         }
 
@@ -148,9 +138,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
 
             var ticket = await _context.tickets
                 .Include(t => t.order)
-                .Include(t => t.room)
                 .Include(t => t.schedule)
-                .Include(t => t.seat)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (ticket == null)
             {

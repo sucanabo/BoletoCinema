@@ -13,11 +13,13 @@ const createMovie = async () => {
         "id": 0,
         "name": getElement('#name').value,
         "summery": getElement('#sum').value,
+        "poster": getElement('#poster').value,
         "trailer_path": cutString(getElement('#trailer').value),
         "status": getElement('#status').value,
         "duration": getElement('#duration').value,
         "published_date": getElement('#date').value
     };
+    console.log('item',item);
     let movie = await fetch(movie_uri, {
         method: 'POST',
         headers: {
@@ -27,9 +29,9 @@ const createMovie = async () => {
         body: JSON.stringify(item)
     });
     let data = await movie.json();
-    console.log(data);
+    console.log('data',data);
     let movie_id = await data.id;
-    console.log(movie_id);
+    console.log('movie id',movie_id);
     listCate.forEach(item => {
         fetch(cate_uri, {
             method: 'POST',
@@ -58,5 +60,5 @@ const createMovie = async () => {
             })
         })
     });
-
+    window.location.href = "../../admin/movies";
 }

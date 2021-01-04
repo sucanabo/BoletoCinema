@@ -23,6 +23,11 @@
                 <span asp-validation-for="summery" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
+                <label asp-for="poster" class="control-label">Poster Path</label>
+                <input id="poster" asp-for="poster" type="text" class="form-control" />
+                <span asp-validation-for="poster" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
                 <label asp-for="trailer_path" class="control-label">Trailer path</label>
                 <input id="trailer" type="text" asp-for="trailer_path" class="form-control" />
                 <span asp-validation-for="trailer_path" class="text-danger"></span>
@@ -75,14 +80,9 @@
                 </button>
             </div>
         </div>
-        <div class="form-group">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="mful" multiple>
-                <label class="custom-file-label" for="mful">Choose file</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <div id="imgsPreview">
+        <div class="col-md-12">
+            <div class="form-group">
+                <img src="~/Admin/assets/images/noimg.png" alt="None image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto" />
             </div>
         </div>
 

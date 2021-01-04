@@ -13,6 +13,7 @@ namespace BoletoCinema.Areas.Admin.Models
         public int id { get; set; }
         public int user_id { get; set; }
         public int movie_id { get; set; }
+        [Required]
         public string content { get; set; }
         public int heart_rate { get; set; }
         public DateTime create_date { get; set; }

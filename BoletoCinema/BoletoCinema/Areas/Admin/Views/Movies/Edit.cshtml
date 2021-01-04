@@ -21,8 +21,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="summery" class="control-label"></label>
-                <input asp-for="summery" class="form-control" />
+                <textarea asp-for="summery" rows="10" class="form-control" />
                 <span asp-validation-for="summery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="poster" class="control-label"></label>
+                <input asp-for="poster" class="form-control" />
+                <span asp-validation-for="poster" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="trailer_path" class="control-label"></label>

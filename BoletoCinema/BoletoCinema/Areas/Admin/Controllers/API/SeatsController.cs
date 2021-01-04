@@ -41,9 +41,15 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
             return seat;
         }
         [HttpGet("{id}")]
-        public IEnumerable<Seat> GetSeatsByRoomId(int id)
+        public IEnumerable<Seat> GetSeatsBySchedule(int id)
         {
-            return  _context.seats.Where(s => s.room_id == id);
+            var seat = from sch in _context.schedules
+                       from s in _context.seats
+                       from r in _context.rooms
+                       where sch.id == id && sch.room_id == r.id && r.id == s.room_id
+                       select s;
+            // return  _context.seats.Where(s => s.room_id == id);
+            return seat;
         }
         // PUT: api/Seats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

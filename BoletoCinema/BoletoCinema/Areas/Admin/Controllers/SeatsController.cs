@@ -49,7 +49,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Seats/Create
         public IActionResult Create()
         {
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id");
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,room_id,position,status")] Seat seat)
+        public async Task<IActionResult> Create([Bind("id,room_id,position")] Seat seat)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", seat.room_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", seat.room_id);
             return View(seat);
         }
 
@@ -83,7 +83,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", seat.room_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", seat.room_id);
             return View(seat);
         }
 
@@ -92,7 +92,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,room_id,position,status")] Seat seat)
+        public async Task<IActionResult> Edit(int id, [Bind("id,room_id,position")] Seat seat)
         {
             if (id != seat.id)
             {
@@ -119,7 +119,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["room_id"] = new SelectList(_context.rooms, "id", "id", seat.room_id);
+            ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", seat.room_id);
             return View(seat);
         }
 

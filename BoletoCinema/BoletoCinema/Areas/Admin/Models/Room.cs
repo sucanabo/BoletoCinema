@@ -12,7 +12,8 @@ namespace BoletoCinema.Areas.Admin.Models
         [Key]
         public int id { get; set; }
         public int branch_id { get; set; }
-
+        [Required]
+        [StringLength(255)]
         public string name { get; set; }
 
         public int status { get; set; }
