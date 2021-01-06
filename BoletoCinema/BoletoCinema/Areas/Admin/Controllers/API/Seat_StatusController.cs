@@ -30,11 +30,9 @@ namespace BoletoCinema.Areas.Admin.Controllers.API
         [HttpGet("{id}")]
         public IEnumerable<Seat_Status> GetSeat_StatusBySchedule(int id)
         {
-            var allSeat_Status = from sch in _context.schedules
-                                 from r in _context.rooms
-                                 from s in _context.seats
+            var allSeat_Status = from tk in _context.tickets
                                  from st in _context.seat_status
-                                 where sch.id == id && sch.room_id == r.id && r.id == s.room_id && s.id == st.seat_id
+                                 where tk.schedule_id == id && tk.id == st.ticket_id
                                  select st;
 
             return allSeat_Status;

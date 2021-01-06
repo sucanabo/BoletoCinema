@@ -9,6 +9,7 @@ var ticketPrice = 50;
 var totalPrice;
 var seatSelected = new Set();
 var dataSeatPos = new Set();
+var seatSlectedId = new Set();
 var seat_container_single = document.querySelector(".seat-area2");
 //call API
 const uri = `../../api/seats/GetSeatsBySchedule/${sch_id}`;
@@ -59,10 +60,12 @@ function addSession() {
     var seatObj = {
         seatPos: [],
         seatSelected: [],
+        seatId:[],
         totalPrice:0
     };
     seatSelected.forEach(item => { seatObj["seatSelected"].push(item) });
     dataSeatPos.forEach(item => { seatObj["seatPos"].push(item) });
+    seatSlectedId.forEach(item => { seatObj["seatId"].push(item) });
     seatObj.totalPrice = totalPrice;
     sessionStorage.setItem("seatPlan", JSON.stringify(seatObj));
 }
@@ -131,6 +134,7 @@ function renderSeat(row) {
                 k = 0;
             }
             allSingleSeat[i].setAttribute("data-seat-pos", i);
+            allSingleSeat[i].setAttribute("data-id", seats[i].id);
         }
     }();
     function showSeatSelected() {
@@ -153,11 +157,13 @@ function renderSeat(row) {
             if (img.classList.contains("booked")) {
                 seatSelected.add(itemText);
                 dataSeatPos.add(item.getAttribute("data-seat-pos"));
+                seatSlectedId.add(item.getAttribute("data-id"));
                 img.src = "../User/assets/images/movie/seat01-booked.png";
             }
             else if (!img.classList.contains("booked")) {
                 seatSelected.delete(itemText);
                 dataSeatPos.delete(item.getAttribute("data-seat-pos"));
+                seatSlectedId.delete(item.getAttribute("data-id"));
                 img.src = "../User/assets/images/movie/seat01-free.png";
             }
             showSeatSelected();

@@ -10,6 +10,10 @@
     <h1>@ViewData["mess"]</h1>
 <!-- ==========Preloader========== -->
 <!-- ==========Sign-In-Section========== -->
+@if(TempData["alert-mess"] != null)
+{
+    @TempData["alert-mess"]
+}
 <section class="account-section bg_img" data-background="~/User/assets/images/account/account-bg.jpg">
     <div class="container">
         <div class="padding-top padding-bottom">

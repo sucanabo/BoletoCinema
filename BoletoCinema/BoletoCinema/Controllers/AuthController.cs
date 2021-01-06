@@ -59,7 +59,11 @@ namespace BoletoCinema.Controllers
                 foreach(var item in allUser)
                 {
                     if (item.username == model.username)
+                    {
+                        SetAlert("User already in system", "warning");
                         return RedirectToAction("SignUp", "Auth");
+                    }
+                        
                 }
                 var user = new User
                 {
@@ -73,14 +77,10 @@ namespace BoletoCinema.Controllers
                 await _context.SaveChangesAsync();
                 var str = JsonConvert.SerializeObject(user);
                 HttpContext.Session.SetString("user", str);
-                if (user.rule == 1)
-                {
-                    var url = Url.RouteUrl("Admin", new { Controller = "Home", action = "Index", area = "Admin" });
-                    return Redirect(url);
-                }
-
+                SetAlert("Sign up success", "success");
                 return RedirectToAction("Index", "Home");
             }
+            SetAlert("Register fail", "danger");
             return RedirectToAction("SignUp", "Auth");
         }
         //Sign in
@@ -109,6 +109,16 @@ namespace BoletoCinema.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public void SetAlert (String mess, String type)
+        {
+            TempData["alert-mess"] = mess;
+            if(type == "success")
+            {
+                TempData["alert-type"] = "alert-success";
+            }
+            else if (type == "danger") TempData["alert-type"] = "alert-danger";
+            else TempData["alert-type"] = "alert-warning";
         }
     }
 }

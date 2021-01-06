@@ -3000,6 +3000,7 @@ input[type="submit"] {
 .event-grid .movie-content .title,
 .movie-grid .movie-content .title {
   padding: 23px 0;
+  height: 100px;
   text-transform: capitalize;
   border-bottom: 1px dashed #11326f;
 }

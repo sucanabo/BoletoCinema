@@ -40,6 +40,7 @@ namespace BoletoCinema.Controllers
 
             ViewData["Title"] = "MovieGrid";
             User user = Ultils.getCurrentUser(HttpContext);
+            ViewBag.Cate = _db.categories.ToArray();
             ViewBag.Movies = _db.movies.ToArray();
             return View(user);
         }
