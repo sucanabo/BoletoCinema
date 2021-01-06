@@ -128,7 +128,7 @@
                                 {
                                     if (@t.GetType().GetProperty("branch_id").GetValue(t, null) == @b.GetType().GetProperty("id").GetValue(b, null))
                                     {
-                                        <div class="item" data-id-ss="@t.GetType().GetProperty("id").GetValue(t,null)">
+                                        <div class="item" data-sch-id="@t.GetType().GetProperty("id").GetValue(t,null)">
                                             @t.GetType().GetProperty("start_time").GetValue(t, null).ToString("HH:mm")
                                         </div>
                                     }
@@ -154,3 +154,12 @@
         </div>
     </div>
 </div>
+@*<script>
+    var sch_item = document.querySelectorAll(".item");
+    sch_item.forEach(item => {
+        item.addEventListener('click', () => {
+            sessionStorage.removeItem('sch-id');
+            sessionStorage.setItem('sch-id', item.getAttribute('data-sch-id'));
+        });
+    })
+</script>*@

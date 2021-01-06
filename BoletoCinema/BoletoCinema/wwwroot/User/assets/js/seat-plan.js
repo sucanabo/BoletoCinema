@@ -1,6 +1,6 @@
 ﻿
 //inital value
-let sch_id = 1;
+let sch_id = sessionStorage.getItem('sch-id');
 let seats = [];
 //var room_id = 1;
 var colPerRow = 14;
@@ -65,11 +65,6 @@ function addSession() {
     dataSeatPos.forEach(item => { seatObj["seatPos"].push(item) });
     seatObj.totalPrice = totalPrice;
     sessionStorage.setItem("seatPlan", JSON.stringify(seatObj));
-    //var selectedObj = seatSelected;
-    //var total = totalPrice;
-    //sessionStorage.setItem("seatPos", JSON.stringify(posObj));
-    //sessionStorage.setItem("seatSelected", JSON.stringify(selectedObj));
-    //sessionStorage.setItem("totalPrice", total);
 }
 
 //render

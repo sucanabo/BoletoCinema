@@ -18,6 +18,19 @@ namespace BoletoCinema.Controllers
         public IActionResult Index()
         {
             User user=Ultils.getCurrentUser(HttpContext);
+            var nowDate = DateTime.Now;
+            var newsestMovie = (from m in _db.movies
+                                orderby m.published_date descending
+                                select m).Take(3);
+            //var hotMovie = from m in _db.movies
+            //               from sch in _db.schedules
+            //               from tk in _db.tickets
+            //               where m.id == sch.movie_id && sch.id == tk.schedule_id
+            //               group m by m.id into g
+            //               orderby g.Count()
+            //               select new { Movie = g};
+            ViewBag.Newsest = newsestMovie.ToArray();
+            //ViewBag.Hot = hotMovie.ToArray();
             return View(user);
         }
 

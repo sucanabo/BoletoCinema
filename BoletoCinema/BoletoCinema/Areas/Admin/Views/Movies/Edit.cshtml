@@ -13,39 +13,43 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
+                <label asp-for="name" class="control-label">Name</label>
+                <input id="name" asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="summery" class="control-label"></label>
-                <textarea asp-for="summery" rows="10" class="form-control" />
+                <label asp-for="summery" class="control-label">Summery</label>
+                <textarea id="sum" asp-for="summery" class="form-control" rows="10"></textarea>
                 <span asp-validation-for="summery" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="poster" class="control-label"></label>
-                <input asp-for="poster" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="poster" class="control-label">Poster Path</label>
+                <input asp-for="poster" type="text" class="form-control" />
                 <span asp-validation-for="poster" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="trailer_path" class="control-label"></label>
-                <input asp-for="trailer_path" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="trailer_path" class="control-label">Trailer path</label>
+                <input type="text" asp-for="trailer_path" class="form-control" />
                 <span asp-validation-for="trailer_path" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
+                <label asp-for="status" class="control-label">Status</label>
+                <select asp-for="status" class="form-control">
+                    <option selected>Select movie status</option>
+                    <option value="1">On Show</option>
+                    <option value="2">On Comming</option>
+                    <option value="0">Stop Showing</option>
+                </select>
                 <span asp-validation-for="status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="duration" class="control-label"></label>
-                <input asp-for="duration" class="form-control" />
+                <label asp-for="duration" class="control-label">Duration (minutes)</label>
+                <input type="number" asp-for="duration" class="form-control" />
                 <span asp-validation-for="duration" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="published_date" class="control-label"></label>
+                <label asp-for="published_date" class="control-label">Publish Date</label>
                 <input asp-for="published_date" class="form-control" />
                 <span asp-validation-for="published_date" class="text-danger"></span>
             </div>
