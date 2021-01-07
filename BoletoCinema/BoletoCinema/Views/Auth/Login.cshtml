@@ -4,7 +4,14 @@
     Layout = "_LayoutSimple";
     ViewData["Title"] = "Login";
 }
-
+@if (TempData["alert-mess"] != null)
+{
+    <div class="my-modal @TempData["alert-type"]">
+        <span class="modal-mess">@TempData["alert-mess"]</span>
+        &nbsp;|&nbsp;
+        <span class="modal-close"><i class="fas fa-times"></i></span>
+    </div>
+}
 <div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
@@ -43,7 +50,7 @@
                 </form>
 
                 <div class="option">
-                    Don't have an account? <a asp-controller="Auth" asp-action="SignUp" >sign up now</a>
+                    Don't have an account? <a asp-controller="Auth" asp-action="SignUp">sign up now</a>
                 </div>
                 <div class="or"><span>Or</span></div>
                 <ul class="social-icons">

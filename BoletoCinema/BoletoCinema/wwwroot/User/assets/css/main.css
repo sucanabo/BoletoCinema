@@ -9091,6 +9091,39 @@ aside {
   -webkit-animation-delay: -0.8s;
 }
 
+.modal--success {
+    color: #0f5132 !important;
+    background-color: #d1e7dd !important;
+    border-color: #badbcc !important;
+}
+
+.modal--danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.modal--warning {
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+.my-modal {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border-radius:25px;
+    bottom: 50px;
+    right: 95px;
+    z-index:999;
+    padding:5px 10px;
+}
+.my-modal .modal-close {
+    font-size: 15px;
+    margin-right:10px;
+    cursor: pointer;
+}
 @keyframes preloader-fx {
   0% {
     -webkit-transform: scale(0, 0);

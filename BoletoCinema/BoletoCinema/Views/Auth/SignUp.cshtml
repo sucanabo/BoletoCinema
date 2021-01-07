@@ -1,4 +1,7 @@
-﻿@model BoletoCinema.ViewModel.RegisterViewModel
+﻿@{ 
+    Layout = "_LayoutSimple";
+}
+@model BoletoCinema.ViewModels.RegisterViewModel
 <div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
@@ -7,12 +10,15 @@
         </div>
     </div>
 </div>
-    <h1>@ViewData["mess"]</h1>
 <!-- ==========Preloader========== -->
 <!-- ==========Sign-In-Section========== -->
-@if(TempData["alert-mess"] != null)
+@if (TempData["alert-mess"] != null)
 {
-    @TempData["alert-mess"]
+    <div class="my-modal @TempData["alert-type"]">
+        <span class="modal-mess">@TempData["alert-mess"]</span>
+        &nbsp;|&nbsp;
+        <span class="modal-close"><i class="fas fa-times"></i></span>
+    </div>
 }
 <section class="account-section bg_img" data-background="~/User/assets/images/account/account-bg.jpg">
     <div class="container">
@@ -23,25 +29,27 @@
                     <h2 class="title">to Boleto </h2>
                 </div>
                 <form class="account-form" method="post" asp-controller="Auth" asp-action="SignUp">
+                    @*@Html.ValidationSummary(false)*@
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="username">Username<span>*</span></label>
-                        <input asp-for="username" type="text" placeholder="Enter Your Username" id="username">
-                        <span asp-validation-for="username"></span>
+                        <input asp-for="username" type="text" placeholder="Enter Your Username" id="username" />
+                        <span asp-validation-for="username" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="email">Email<span>*</span></label>
-                        <input asp-for="email" type="email" placeholder="Enter Your Email" id="email">
-                        <span asp-validation-for="email"></span>
+                        <input asp-for="email" type="email" placeholder="Enter Your Email" id="email" />
+                        <span asp-validation-for="email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="password">Password<span>*</span></label>
-                        <input asp-for="password" type="password" placeholder="Password" id="pass1">
-                        <span asp-validation-for="password"></span>
+                        <input required asp-for="password" type="password" placeholder="Password" id="pass1" />
+                        <span asp-validation-for="password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="confirmPassword">Confirm Password<span>*</span></label>
-                        <input asp-for="confirmPassword" type="password" placeholder="Password" id="pass2">
-                        <span asp-validation-for="confirmPassword"></span>
+                        <input asp-for="confirmPassword" type="password" placeholder="Password" id="pass2" />
+                        <span asp-validation-for="confirmPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group checkgroup">
                         <input type="checkbox" id="bal" required checked>
@@ -76,3 +84,6 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

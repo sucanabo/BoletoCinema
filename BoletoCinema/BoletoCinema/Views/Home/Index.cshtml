@@ -4,6 +4,14 @@
 @{
     Layout = "_Layout";
 }
+@if (TempData["alert-mess"] != null)
+{
+    <div class="my-modal @TempData["alert-type"]">
+            <span class="modal-mess">@TempData["alert-mess"]</span>
+        &nbsp;|&nbsp; 
+            <span class="modal-close"><i class="fas fa-times"></i></span>
+    </div>
+}
 <section class="banner-section">
     <div class="banner-bg bg_img bg-fixed" data-background="~/User/assets/images/banner/banner01.jpg"></div>
     <div class="container">
@@ -333,36 +341,36 @@
                     </div>
                     <div class="row mb-30-none justify-content-center">
                         @*@foreach (var item in ViewBag.Hot)
-                        {
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="movie-grid">
-                                    <div class="movie-thumb c-thumb">
-                                        <a href="#0">
-                                            <img src="@item.poster" alt="movie">
-                                        </a>
-                                    </div>
-                                    <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">@item.name</a>
-                                        </h5>
-                                        <ul class="movie-rating-percent">
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="~/User/assets/images/movie/tomato.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="~/User/assets/images/movie/cake.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                        </ul>
+                            {
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="movie-grid">
+                                        <div class="movie-thumb c-thumb">
+                                            <a href="#0">
+                                                <img src="@item.poster" alt="movie">
+                                            </a>
+                                        </div>
+                                        <div class="movie-content bg-one">
+                                            <h5 class="title m-0">
+                                                <a href="#0">@item.name</a>
+                                            </h5>
+                                            <ul class="movie-rating-percent">
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="~/User/assets/images/movie/tomato.png" alt="movie">
+                                                    </div>
+                                                    <span class="content">88%</span>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="~/User/assets/images/movie/cake.png" alt="movie">
+                                                    </div>
+                                                    <span class="content">88%</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }*@
+                            }*@
                     </div>
                 </div>
                 <div class="article-section">

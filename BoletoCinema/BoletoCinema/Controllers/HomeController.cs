@@ -17,7 +17,7 @@ namespace BoletoCinema.Controllers
         }
         public IActionResult Index()
         {
-            User user=Ultils.getCurrentUser(HttpContext);
+            User user = Ultils.getCurrentUser(HttpContext);
             var nowDate = DateTime.Now;
             var newsestMovie = (from m in _db.movies
                                 orderby m.published_date descending

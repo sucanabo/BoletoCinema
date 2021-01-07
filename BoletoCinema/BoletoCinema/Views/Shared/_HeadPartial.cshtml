@@ -61,14 +61,14 @@
                 <li>
                     <a asp-controller="Home" asp-action="Contact">contact</a>
                 </li>
-                @if (User.Identity.IsAuthenticated @*|| Model != null*@)
+                @if (User.Identity.IsAuthenticated || Model != null)
                 {
             <li>
 
-                    @*@if (Model.id != null)
+                    @if (Model.id != null)
                     {
                         <a href="#0">Hello,@Model.displayname </a>
-                    }*@
+                    }
                     @if (User.Identity.IsAuthenticated)
                     {
                         <a href="#0">Hello,User </a>
@@ -88,7 +88,7 @@
                 else
                 {
                     <li class="header-button pr-0">
-                        <a asp-controller="Home" asp-action="SignUp">join us</a>
+                        <a asp-controller="Auth" asp-action="SignUp">join us</a>
                         <a asp-controller="Auth" asp-action="Login">Login</a>
                     </li>
                 }
