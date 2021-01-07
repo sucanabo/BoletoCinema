@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BoletoCinema.Areas.Admin.Models;
 using BoletoCinema.Areas.Admin.Data;
+using X.PagedList;
 namespace BoletoCinema.Controllers
 {
     public class HomeController : Controller
@@ -38,6 +39,8 @@ namespace BoletoCinema.Controllers
 
         public IActionResult MovieGrid(int? page)
         {
+            var pagenumber = page ?? 1;
+            ViewBag.ListMovies = _db.movies.ToList().ToPagedList(pagenumber,3);
 
             ViewData["Title"] = "MovieGrid";
             User user = Ultils.getCurrentUser(HttpContext);
