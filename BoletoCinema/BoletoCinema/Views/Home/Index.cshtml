@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     Layout = "_Layout";
 }
@@ -24,7 +22,7 @@
                     <b>Sport</b>
                 </span>
             </h1>
-            <p>Safe, secure, reliable ticketing.Your ticket to live entertainment!</p>
+            <p>Safe, secure, reliable ticketing.Your ticket to live entertainment!</p>ViewBag.Movies = _db.movies.ToArray();
         </div>
     </div>
 </section>
@@ -306,13 +304,13 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="#0">
+                                        <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">
                                             <img src="@item.poster" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
                                         <h5 class="title m-0">
-                                            <a href="#0">@item.name</a>
+                                            <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">@item.name</a>
                                         </h5>
                                         <ul class="movie-rating-percent">
                                             <li>
@@ -336,115 +334,86 @@
                 </div>
                 <div class="article-section padding-bottom">
                     <div class="section-header-1">
-                        <h2 class="title">hot</h2>
+                        <h2 class="title">On Show</h2>
                         <a class="view-all" href="events.html">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
-                        @*@foreach (var item in ViewBag.Hot)
-                            {
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="movie-grid">
-                                        <div class="movie-thumb c-thumb">
-                                            <a href="#0">
-                                                <img src="@item.poster" alt="movie">
-                                            </a>
-                                        </div>
-                                        <div class="movie-content bg-one">
-                                            <h5 class="title m-0">
-                                                <a href="#0">@item.name</a>
-                                            </h5>
-                                            <ul class="movie-rating-percent">
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="~/User/assets/images/movie/tomato.png" alt="movie">
-                                                    </div>
-                                                    <span class="content">88%</span>
-                                                </li>
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="~/User/assets/images/movie/cake.png" alt="movie">
-                                                    </div>
-                                                    <span class="content">88%</span>
-                                                </li>
-                                            </ul>
-                                        </div>
+                        @foreach (var item in ViewBag.OnShow)
+                        {
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="movie-grid">
+                                    <div class="movie-thumb c-thumb">
+                                        <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">
+                                            <img src="@item.poster" alt="movie">
+                                        </a>
+                                    </div>
+                                    <div class="movie-content bg-one">
+                                        <h5 class="title m-0">
+                                            <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">@item.name</a>
+                                        </h5>
+                                        <ul class="movie-rating-percent">
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="~/User/assets/images/movie/tomato.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="~/User/assets/images/movie/cake.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                            }*@
+                            </div>
+                        }
                     </div>
                 </div>
-                <div class="article-section">
+                <div class="article-section padding-bottom">
                     <div class="section-header-1">
-                        <h2 class="title">sports</h2>
-                        <a class="view-all" href="sports.html">View All</a>
+                        <h2 class="title">On Show</h2>
+                        <a class="view-all" href="events.html">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="sports-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="~/User/assets/images/sports/sports01.jpg" alt="sports">
-                                    </a>
-                                    <div class="event-date">
-                                        <h6 class="date-title">28</h6>
-                                        <span>Dec</span>
+                        @foreach (var item in ViewBag.OnComming)
+                        {
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="movie-grid">
+                                    <div class="movie-thumb c-thumb">
+                                        <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">
+                                            <img src="@item.poster" alt="movie">
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="#0">football league tournament</a>
-                                    </h5>
-                                    <div class="movie-rating-percent">
-                                        <span>327 Montague Street</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="sports-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="~/User/assets/images/sports/sports02.jpg" alt="sports">
-                                    </a>
-                                    <div class="event-date">
-                                        <h6 class="date-title">28</h6>
-                                        <span>Dec</span>
-                                    </div>
-                                </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="#0">world cricket league 2020</a>
-                                    </h5>
-                                    <div class="movie-rating-percent">
-                                        <span>327 Montague Street</span>
+                                    <div class="movie-content bg-one">
+                                        <h5 class="title m-0">
+                                            <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.id">@item.name</a>
+                                        </h5>
+                                        <ul class="movie-rating-percent">
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="~/User/assets/images/movie/tomato.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="~/User/assets/images/movie/cake.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="sports-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="~/User/assets/images/sports/sports03.jpg" alt="sports">
-                                    </a>
-                                    <div class="event-date">
-                                        <h6 class="date-title">28</h6>
-                                        <span>Dec</span>
-                                    </div>
-                                </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="#0">basket ball tournament 2020</a>
-                                    </h5>
-                                    <div class="movie-rating-percent">
-                                        <span>327 Montague Street</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    sessionStorage.setItem("u_id", document.querySelector("#u_id").innerHTML);
+</script>

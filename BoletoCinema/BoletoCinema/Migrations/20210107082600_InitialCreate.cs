@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BoletoCinema.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -73,7 +73,8 @@ namespace BoletoCinema.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     summery = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    trailer_path = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    poster = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    trailer_path = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     status = table.Column<int>(type: "int", nullable: false),
                     duration = table.Column<int>(type: "int", nullable: false),
                     published_date = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -119,27 +120,6 @@ namespace BoletoCinema.Migrations
                         name: "FK_rooms_branches_branch_id",
                         column: x => x.branch_id,
                         principalTable: "branches",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "images",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    movie_id = table.Column<int>(type: "int", nullable: false),
-                    path = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    status = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_images", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_images_movies_movie_id",
-                        column: x => x.movie_id,
-                        principalTable: "movies",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -458,11 +438,6 @@ namespace BoletoCinema.Migrations
                 column: "user_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_images_movie_id",
-                table: "images",
-                column: "movie_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_movie_Actors_actor_id",
                 table: "movie_Actors",
                 column: "actor_id");
@@ -572,9 +547,6 @@ namespace BoletoCinema.Migrations
         {
             migrationBuilder.DropTable(
                 name: "contactForms");
-
-            migrationBuilder.DropTable(
-                name: "images");
 
             migrationBuilder.DropTable(
                 name: "movie_Actors");

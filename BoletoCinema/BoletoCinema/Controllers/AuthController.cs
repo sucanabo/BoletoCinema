@@ -44,6 +44,8 @@ namespace BoletoCinema.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
+
+
         //Sign up
         public IActionResult SignUp()
         {
@@ -107,6 +109,8 @@ namespace BoletoCinema.Controllers
             SetAlert("Register fail", "danger");
             return View(model);
         }
+
+
         //Sign in
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -128,6 +132,7 @@ namespace BoletoCinema.Controllers
                 return Redirect(url);
             }
             SetAlert("Login success - User", "success");
+
             return RedirectToAction("Index", "Home");
 
         }
