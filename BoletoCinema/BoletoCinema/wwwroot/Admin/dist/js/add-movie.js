@@ -8,6 +8,7 @@ const img_uri = `../../api/images`;
 function cutString(str) {
     return str = str.slice(str.indexOf('=') + 1, str.length);
 }
+
 const createMovie = async () => {
     let item = {
         "id": 0,

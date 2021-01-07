@@ -150,6 +150,7 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("poster")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("published_date")

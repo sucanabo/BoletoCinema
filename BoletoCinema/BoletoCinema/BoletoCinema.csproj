@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\API\" />
     <Folder Include="Properties\" />
     <Folder Include="wwwroot\Admin\assets\images\Actor\" />
     <Folder Include="wwwroot\Admin\assets\images\movie\" />

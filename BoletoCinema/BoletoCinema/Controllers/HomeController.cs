@@ -17,20 +17,21 @@ namespace BoletoCinema.Controllers
         }
         public IActionResult Index()
         {
-            User user=Ultils.getCurrentUser(HttpContext);
+            User user = Ultils.getCurrentUser(HttpContext);
             var nowDate = DateTime.Now;
+
             var newsestMovie = (from m in _db.movies
                                 orderby m.published_date descending
                                 select m).Take(3);
-            //var hotMovie = from m in _db.movies
-            //               from sch in _db.schedules
-            //               from tk in _db.tickets
-            //               where m.id == sch.movie_id && sch.id == tk.schedule_id
-            //               group m by m.id into g
-            //               orderby g.Count()
-            //               select new { Movie = g};
+
+            var onShowMovie = _db.movies.Where(m => m.status == 1).Take(3);
+
+            var onCommingMovie = _db.movies.Where(m => m.status == 2).Take(3);
+
             ViewBag.Newsest = newsestMovie.ToArray();
-            //ViewBag.Hot = hotMovie.ToArray();
+            ViewBag.OnShow = onShowMovie.ToArray();
+            ViewBag.OnComming = onCommingMovie.ToArray();
+
             return View(user);
         }
 
@@ -40,25 +41,29 @@ namespace BoletoCinema.Controllers
 
             ViewData["Title"] = "MovieGrid";
             User user = Ultils.getCurrentUser(HttpContext);
-            ViewBag.Cate = _db.categories.ToArray();
             ViewBag.Movies = _db.movies.ToArray();
+            ViewBag.Cate = _db.categories.ToArray();
             return View(user);
         }
         [Route("Home/MovieDetail/{id}")]
         public IActionResult MovieDetail(int? id)
         {
             ViewBag.Movie = _db.movies.Where(m => m.id == id).ToArray();
+
             var listTag = from ct in _db.categories
                           from mct in _db.movie_Categories
                           where ct.id == mct.category_id && mct.movie_id == id
                           select ct.name;
+
             var listCast = from ac in _db.actors
                            from mac in _db.movie_Actors
                            where ac.id == mac.actor_id && mac.movie_id == id
                            select ac;
+
             ViewBag.listCast = listCast.ToArray();
             ViewBag.listTag = listTag.ToArray();
             ViewData["movie_id"] = id;
+
             return View();
         }
 
@@ -78,7 +83,7 @@ namespace BoletoCinema.Controllers
                            from b in _db.branches
                            from r in _db.rooms
                            where m.id == id && m.id == sd.movie_id && sd.room_id == r.id && r.branch_id == b.id
-                           select new { sd.id, sd.start_time, r.branch_id, sd.room_id};
+                           select new { sd.id, sd.start_time, r.branch_id, sd.room_id };
 
 
 
@@ -87,8 +92,6 @@ namespace BoletoCinema.Controllers
 
             ViewBag.Branch = listBranch;
             ViewBag.Time = listTime;
-
-
 
             return View();
         }
@@ -108,12 +111,15 @@ namespace BoletoCinema.Controllers
             return View(user);
         }
 
+
         public IActionResult MovieSeatPlan()
         {
             ViewData["Title"] = "MovieSeatPlan";
+
             User user = Ultils.getCurrentUser(HttpContext);
             return View(user);
         }
+
         public IActionResult MovieCheckout()
         {
 
@@ -122,7 +128,7 @@ namespace BoletoCinema.Controllers
             return View(user);
         }
 
-        
+
 
         public IActionResult About()
         {

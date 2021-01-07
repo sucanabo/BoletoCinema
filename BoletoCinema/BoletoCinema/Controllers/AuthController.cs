@@ -44,6 +44,8 @@ namespace BoletoCinema.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
+
+
         //Sign up
         [HttpGet]
         public IActionResult SignUp()
@@ -83,6 +85,8 @@ namespace BoletoCinema.Controllers
             SetAlert("Register fail", "danger");
             return RedirectToAction("SignUp", "Auth");
         }
+
+
         //Sign in
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -101,7 +105,7 @@ namespace BoletoCinema.Controllers
                 var url = Url.RouteUrl("Admin", new { Controller = "Home", action = "Index", area = "Admin" });
                 return Redirect(url);
             }
-
+            ViewData["user-id"] = r[0].id;
             return RedirectToAction("Index", "Home");
 
         }

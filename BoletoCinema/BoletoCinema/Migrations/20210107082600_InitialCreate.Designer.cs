@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoletoCinema.Migrations
 {
     [DbContext(typeof(BoletoContext))]
-    [Migration("20210104041617_Movie_addColumn_poster")]
-    partial class Movie_addColumn_poster
+    [Migration("20210107082600_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -152,6 +152,7 @@ namespace BoletoCinema.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("poster")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("published_date")
