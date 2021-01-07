@@ -18,7 +18,6 @@ amount.innerText = `$` + (vatPrice + seatPlan["totalPrice"]);
 
 //-----------
 //proceed
-
 const getElement = document.querySelector.bind(document);
 const ticket_uri = `../../api/TicketsAPI`;
 const order_uri = `../../api/OrdersAPI`;
