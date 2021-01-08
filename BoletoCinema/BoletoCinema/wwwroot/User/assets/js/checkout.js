@@ -1,5 +1,7 @@
-﻿var seatPlan = JSON.parse(sessionStorage.getItem("seatPlan"));
+﻿
+var seatPlan = JSON.parse(sessionStorage.getItem("seatPlan"));
 var tmpPrice = document.querySelectorAll('.ticket-tmpPrice');
+var sch_id = parseInt(sessionStorage.getItem('sch-id'));
 tmpPrice.forEach(item => {
     item.innerText = "$" + seatPlan["totalPrice"];
 });
@@ -72,7 +74,7 @@ const saveOrder = async () => {
                 {
                     "id": 0,
                     "order_id": order_id,
-                    "schedule_id": seatPlan['sch-id'],
+                    "schedule_id": sch_id,
                     "price": 50
                 })
             });
