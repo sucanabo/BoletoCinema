@@ -16,7 +16,7 @@ namespace BoletoCinema.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync(String searchName)
         {
             User user = Ultils.getCurrentUser(HttpContext);
             var nowDate = DateTime.Now;
@@ -32,8 +32,21 @@ namespace BoletoCinema.Controllers
             ViewBag.Newsest = newsestMovie.ToArray();
             ViewBag.OnShow = onShowMovie.ToArray();
             ViewBag.OnComming = onCommingMovie.ToArray();
+            var search = from n in _db.movies
+                         select n;
+            if (!String.IsNullOrEmpty(searchName))
+            {
+                search = search.Where(s => s.name.Contains(searchName));
 
-            return View(user);
+            }
+            if (search == null)
+            {
+                return View(await search.ToListAsync());
+            }
+            else
+            {
+                return View(user);
+            }
         }
 
 
