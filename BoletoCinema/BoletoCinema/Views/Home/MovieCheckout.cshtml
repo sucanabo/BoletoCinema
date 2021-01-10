@@ -3,6 +3,20 @@
 *@
 @{
 }
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                Đặt vé thành công
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="saveOrder()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section class="details-banner hero-area bg_img seat-plan-banner" data-background="~/User/assets/images/banner/banner04.jpg">
     <div class="container">
         <div class="details-banner-wrapper">
@@ -75,44 +89,44 @@
                     </form>
                 </div>
             </div>
-            
+
             <div class="col-lg-4">
-                    <div class="booking-summery bg-one">
-                        <h4 class="title">booking summery</h4>
-                        <ul>
-                            <li>
-                                <h6 class="subtitle" id="ticket-movie">Venus</h6>
-                            </li>
-                            <li>
-                                <h6 class="subtitle"><span id="ticket-branch"></span><span id="ticket-quantity"></span></h6>
-                                <div class="info"><span>10 SEP TUE, 11:00 PM</span> <span>Tickets</span></div>
-                            </li>
-                            <li>
-                                <h6 class="subtitle mb-0"><span>Tickets  Price</span><span class="ticket-tmpPrice"></span></h6>
-                            </li>
-                        </ul>
-                        <ul class="side-shape">
-                            <li>
-                                <h6 class="subtitle"><span>Seat Detail</span></h6>
-                                <span class="info"><span id="ticket-seat"></span></span>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <span class="info"><span>price</span><span class="ticket-tmpPrice"></span></span>
-                                <span class="info"><span>vat</span><span id="ticket-VAT"></span></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="proceed-area  text-center">
-                        <h6 class="subtitle"><span>Amount Payable</span><span id="ticket-totalPrice"></span></h6>
-                        <a href="#" id="proceed-button" class="custom-button" onclick="saveOrder()">proceed</a>
-                    </div>
+                <div class="booking-summery bg-one">
+                    <h4 class="title">booking summery</h4>
+                    <ul>
+                        <li>
+                            <h6 class="subtitle" id="ticket-movie">Venus</h6>
+                        </li>
+                        <li>
+                            <h6 class="subtitle"><span id="ticket-branch"></span><span id="ticket-quantity"></span></h6>
+                            <div class="info"><span>10 SEP TUE, 11:00 PM</span> <span>Tickets</span></div>
+                        </li>
+                        <li>
+                            <h6 class="subtitle mb-0"><span>Tickets  Price</span><span class="ticket-tmpPrice"></span></h6>
+                        </li>
+                    </ul>
+                    <ul class="side-shape">
+                        <li>
+                            <h6 class="subtitle"><span>Seat Detail</span></h6>
+                            <span class="info"><span id="ticket-seat"></span></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="info"><span>price</span><span class="ticket-tmpPrice"></span></span>
+                            <span class="info"><span>vat</span><span id="ticket-VAT"></span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proceed-area  text-center">
+                    <h6 class="subtitle"><span>Amount Payable</span><span id="ticket-totalPrice"></span></h6>
+                    <a href="#" id="proceed-button" data-toggle="modal" data-target="#exampleModal" class="custom-button" >proceed</a>
+                </div>
             </div>
-            
+
         </div>
     </div>
 </div>
-@section Scripts{ 
-<script src="~/User/assets/js/checkout.js"></script>
+@section Scripts{
+    <script src="~/User/assets/js/checkout.js"></script>
 }
