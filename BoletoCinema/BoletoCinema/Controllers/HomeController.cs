@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoletoCinema.Areas.Admin.Models;
 using BoletoCinema.Areas.Admin.Data;
 using X.PagedList;
+
 namespace BoletoCinema.Controllers
 {
     public class HomeController : Controller

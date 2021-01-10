@@ -46,11 +46,14 @@ namespace BoletoCinema
                     googleOptions.ClientId = "522715167034-trg6ll42ofsje2jd8t2goisi8ktv915s.apps.googleusercontent.com";
                     googleOptions.ClientSecret = "Kx5zV7NeVbt1kziBJ78n6JtV";
                 })
-                .AddCookie();
+                .AddCookie(options => {
+                    options.LoginPath = "/Home/Auth/Login";
+                    options.Cookie.Name = "AshProgHelpCookie";
+                });
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.IdleTimeout = TimeSpan.FromSeconds(3600);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
@@ -77,7 +80,7 @@ namespace BoletoCinema
             app.UseRouting();
             app.UseSession();
             app.UseAuthorization();
-
+            app.UseCookiePolicy();
             //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
