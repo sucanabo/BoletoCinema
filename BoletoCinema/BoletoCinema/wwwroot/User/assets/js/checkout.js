@@ -24,11 +24,30 @@ const getElement = document.querySelector.bind(document);
 const ticket_uri = `../../api/TicketsAPI`;
 const order_uri = `../../api/OrdersAPI`;
 const seat_status_uri = `../../api/Seat_Status/PostSeat_Status`;
+const user_uri = `../../api/UsersAPI`;
+
+
 
 const saveOrder = async () => {
+    //get id user
+    let getUser = await fetch(user_uri);
+    let user = await getUser.json();
+    console.log(user);
+
+    let getDisplayname = document.getElementById('user-displayname').innerText;
+    console.log(getDisplayname);
+
+    let getIdUser;
+    for (var i = 0; i < user.length; i++) {
+        if (user[i].displayname == getDisplayname)
+            getIdUser = user[i].id;
+    }
+    console.log(getIdUser);
+
+    //saveOrder
     let item_order = {
         "id": 0,
-        "user_id": 3,
+        "user_id": getIdUser,
         "total_price": vatPrice + seatPlan["totalPrice"],
         "status": 1,
         "create_date": new Date().toISOString()
@@ -63,6 +82,9 @@ const saveOrder = async () => {
     var countSeatId = seatPlan['seatId'].length;
     console.log(countSeatId);
 
+    
+
+    //saveTicket
     for (var i = get_last_ticket.id + 1; i <= get_last_ticket.id + countSeatId; i++) {
         var ticket = await fetch(ticket_uri, {
             method: 'POST',
@@ -85,6 +107,7 @@ const saveOrder = async () => {
     let ticket_id = await data_ticket.id;
     console.log(data_ticket);
 
+    //saveSeatStatus
         seatPlan['seatId'].forEach(async function (item) {
             fetch(seat_status_uri, {
                 method: 'POST',
