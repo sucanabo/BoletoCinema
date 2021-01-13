@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\API\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Properties\" />
     <Folder Include="wwwroot\Admin\assets\images\Actor\" />
     <Folder Include="wwwroot\Admin\assets\images\movie\" />
