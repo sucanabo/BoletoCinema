@@ -87,14 +87,14 @@ namespace BoletoCinema.Controllers
                            from b in _db.branches
                            from r in _db.rooms
                            where m.id == id && m.id == sd.movie_id && sd.room_id == r.id && r.branch_id == b.id
-                           select new { sd.id, sd.start_time, r.branch_id, sd.room_id };
+                           select new {  sd.id, sd.start_time, r.branch_id, sd.room_id };
 
 
 
             ViewData["Title"] = "MovieTicketPlan";
             ViewData["_movie_id"] = id;
 
-            ViewBag.Branch = listBranch;
+            ViewBag.Branch = listBranch.Distinct();
             ViewBag.Time = listTime;
 
             return View();
