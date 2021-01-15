@@ -23,6 +23,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Reviews
         public async Task<IActionResult> Index()
         {
+            
             var boletoContext = _context.reviews.Include(r => r.movie).Include(r => r.user);
             return View(await boletoContext.ToListAsync());
         }

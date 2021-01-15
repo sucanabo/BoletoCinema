@@ -27,7 +27,6 @@ const seat_status_uri = `../../api/Seat_Status/PostSeat_Status`;
 const user_uri = `../../api/UsersAPI`;
 
 
-
 const saveOrder = async () => {
     //get id user
     let getUser = await fetch(user_uri);

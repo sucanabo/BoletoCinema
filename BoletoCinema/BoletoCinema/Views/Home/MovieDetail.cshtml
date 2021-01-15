@@ -1,9 +1,10 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model BoletoCinema.Areas.Admin.Models.Movie
 @{
 }
+
+<input id="movieId" hidden="hidden" value="@ViewBag.Movie[0].id">
 <section class="details-banner bg_img" data-background="~/User/assets/images/banner/banner03.jpg">
     <div class="container">
         <div class="details-banner-wrapper">
@@ -167,13 +168,13 @@
                                 summery
                             </li>
                             <li>
-                                user review <span>147</span>
+                                MOVIE DISCUSSTION <span>147</span>
                             </li>
                         </ul>
                         <div class="tab-area">
                             <div class="tab-item active">
                                 <div class="item">
-                                    <h5 class="sub-title">Synopsis</h5>
+                                    <h5 class="sub-title">Summery</h5>
                                     <p>@ViewBag.Movie[0].summery</p>
                                 </div>
                                 <div class="item">
@@ -204,6 +205,27 @@
                                 </div>
                             </div>
                             <div class="tab-item">
+                                <h5 class="sub-title">POST YOUR DISCUSSTION</h5>
+                                <br />
+                            @if (TempData["IS_LOGON"] == "true" || Model != null)
+                            {
+
+                            <div class="form-group">
+                                <span id="discusstionValidateMessage" style="color:red;display:none;"></span>
+                                <textarea style="background-color: #001232; color:white;" id="discusstion" placeholder="Enter your feeling about this movie?" required></textarea>
+                                <button id="btnPostDiscusstion" class="custom-button mt-2" >POST NOW!</button>
+                            </div>
+
+                                    
+                            }
+                            else
+                            {
+                               <a class="custom-button mb-5" asp-controller="Auth" asp-action="Login">Login to Discusstion</a>
+                            }
+                            <div class="review-section mt-2">
+
+
+                                @foreach (var item in ViewBag.listComment) {
                                 <div class="movie-review-item">
                                     <div class="author">
                                         <div class="thumb">
@@ -212,145 +234,23 @@
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">minkuk seo</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
+                                            <h6 class="subtitle"><a href="#0">@item.GetType().GetProperty("displayname").GetValue(item, null)</a></h6>
+                                            <span> @item.GetType().GetProperty("create_date").GetValue(item, null) <i class="far fa-clock"></i></span>
                                         </div>
                                     </div>
                                     <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
+                                        <p>@item.GetType().GetProperty("content").GetValue(item, null)</p>
                                         <div class="review-meta">
                                             <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
                                                 Report Abuse
+                                                <i class="red-icon fa fa-flag "></i>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast04.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">rudra rai</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast01.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">rafuj</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast03.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">bela bose</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="load-more text-center">
-                                    <a href="#0" class="custom-button transparent">load more</a>
-                                </div>
+                                }
+   
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -361,11 +261,11 @@
 </section>
 <script>
     var editShowScreen = function(){
-        var dura = document.querySelector('#m-duration span');
-        dura.innerText = handleDuration(parseInt(dura.innerText));
-        function handleDuration(minute) {
-            var hours = (minute - minute % 60) / 60;
-            return "" + hours + " hours " + (minute - hours * 60) + " minutes" ;
-        }
-    }();
+                                    var dura = document.querySelector('#m-duration span');
+                                    dura.innerText = handleDuration(parseInt(dura.innerText));
+                                    function handleDuration(minute) {
+                                        var hours = (minute - minute % 60) / 60;
+                                        return "" + hours + " hours " + (minute - hours * 60) + " minutes" ;
+                                    }
+                                }();
 </script>
