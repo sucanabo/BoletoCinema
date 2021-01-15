@@ -13,7 +13,7 @@ namespace BoletoCinema.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class TicketsController : ControllerBase
-    {
+    {   
         private readonly BoletoContext _context;
 
         public TicketsController(BoletoContext context)

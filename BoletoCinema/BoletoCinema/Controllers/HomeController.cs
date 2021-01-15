@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿    using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +53,7 @@ namespace BoletoCinema.Controllers
         public IActionResult MovieDetail(int? id)
         {
             ViewBag.Movie = _db.movies.Where(m => m.id == id).ToArray();
-
+            User user = Ultils.getCurrentUser(HttpContext);
             var listTag = from ct in _db.categories
                           from mct in _db.movie_Categories
                           where ct.id == mct.category_id && mct.movie_id == id
@@ -63,12 +63,20 @@ namespace BoletoCinema.Controllers
                            from mac in _db.movie_Actors
                            where ac.id == mac.actor_id && mac.movie_id == id
                            select ac;
+            var listComment = from cm in _db.reviews
+                              from us in _db.users
+                              where cm.user_id == us.id
+                              select new { cm.movie_id, cm.content, cm.create_date, us.displayname};
+
 
             ViewBag.listCast = listCast.ToArray();
             ViewBag.listTag = listTag.ToArray();
+            ViewBag.listComment = (from cc in listComment
+                                   where cc.movie_id == id
+                                   select cc).ToArray();
             ViewData["movie_id"] = id;
 
-            return View();
+            return View(user);
         }
 
         [Route("Home/MovieTicketPlan/{id}")]
