@@ -52,6 +52,7 @@ namespace BoletoCinema.Controllers
         [Route("Home/MovieDetail/{id}")]
         public IActionResult MovieDetail(int? id)
         {
+            
             ViewBag.Movie = _db.movies.Where(m => m.id == id).ToArray();
 
             var listTag = from ct in _db.categories
@@ -89,8 +90,12 @@ namespace BoletoCinema.Controllers
                            where m.id == id && m.id == sd.movie_id && sd.room_id == r.id && r.branch_id == b.id
                            select new {  sd.id, sd.start_time, r.branch_id, sd.room_id };
 
+            var movieName = from m in _db.movies
+                            where m.id == id
+                            select m.name;
 
-
+            ViewBag.MovieName = movieName;
+            ViewData["MovieName"] = movieName;
             ViewData["Title"] = "MovieTicketPlan";
             ViewData["_movie_id"] = id;
 
@@ -175,5 +180,7 @@ namespace BoletoCinema.Controllers
             User user = Ultils.getCurrentUser(HttpContext);
             return View(user);
         }
+
+        
     }
 }
