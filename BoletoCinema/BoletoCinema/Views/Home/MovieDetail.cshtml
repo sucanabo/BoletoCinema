@@ -204,17 +204,19 @@
                                 </div>
                             </div>
                             <div class="tab-item">
+                                @foreach (var item in ViewBag.Test)
+                                {
                                 <div class="movie-review-item">
                                     <div class="author">
                                         <div class="thumb">
                                             <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast02.jpg" alt="cast">
+                                                <img src="~/User/assets/images/cast/@item.GetType().GetProperty("avatar").GetValue(item, null)" alt="cast">
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
                                             <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">minkuk seo</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
+                                            <h6 class="subtitle"><a href="#0">@item.GetType().GetProperty("username").GetValue(item, null)</a></h6>
+                                            <span><i class="fas fa-check"></i> @item.GetType().GetProperty("heart_rate").GetValue(item, null)</span>
                                         </div>
                                     </div>
                                     <div class="movie-review-content">
@@ -226,7 +228,7 @@
                                             <i class="flaticon-favorite-heart-button"></i>
                                         </div>
                                         <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
+                                        <p>@item.GetType().GetProperty("content").GetValue(item, null)</p>
                                         <div class="review-meta">
                                             <a href="#0">
                                                 <i class="flaticon-hand"></i><span>8</span>
@@ -240,116 +242,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast04.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">rudra rai</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast01.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">rafuj</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="movie-review-item">
-                                    <div class="author">
-                                        <div class="thumb">
-                                            <a href="#0">
-                                                <img src="~/User/assets/images/cast/cast03.jpg" alt="cast">
-                                            </a>
-                                        </div>
-                                        <div class="movie-review-info">
-                                            <span class="reply-date">13 Days Ago</span>
-                                            <h6 class="subtitle"><a href="#0">bela bose</a></h6>
-                                            <span><i class="fas fa-check"></i> verified review</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-review-content">
-                                        <div class="review">
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                            <i class="flaticon-favorite-heart-button"></i>
-                                        </div>
-                                        <h6 class="cont-title">Awesome Movie</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                        <div class="review-meta">
-                                            <a href="#0">
-                                                <i class="flaticon-hand"></i><span>8</span>
-                                            </a>
-                                            <a href="#0" class="dislike">
-                                                <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                            </a>
-                                            <a href="#0">
-                                                Report Abuse
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                 }
+
                                 <div class="load-more text-center">
-                                    <a href="#0" class="custom-button transparent">load more</a>
+                                    <a href="#0" onclick="loadmore()" class="custom-button transparent">load more</a>
                                 </div>
                             </div>
                         </div>
@@ -361,11 +257,27 @@
 </section>
 <script>
     var editShowScreen = function(){
-        var dura = document.querySelector('#m-duration span');
-        dura.innerText = handleDuration(parseInt(dura.innerText));
-        function handleDuration(minute) {
-            var hours = (minute - minute % 60) / 60;
-            return "" + hours + " hours " + (minute - hours * 60) + " minutes" ;
+                                    var dura = document.querySelector('#m-duration span');
+                                    dura.innerText = handleDuration(parseInt(dura.innerText));
+                                    function handleDuration(minute) {
+                                        var hours = (minute - minute % 60) / 60;
+                                        return "" + hours + " hours " + (minute - hours * 60) + " minutes" ;
+                                    }
+                                }();
+</script>
+
+<script>
+    var currentindex = 0
+    function loadmore() {
+        var maxresult = 4
+        for (var i = 4; i < maxresult; i++) {
+            if (currentindex >= @ViewBag.Test) {
+                $("#lmbutton").hide()
+                return
+            }
+            $("#content").append("<div>" + items[i + currentindex] + "</div>")
         }
-    }();
+        currentindex += maxresult
+    }
+    loadmore()
 </script>

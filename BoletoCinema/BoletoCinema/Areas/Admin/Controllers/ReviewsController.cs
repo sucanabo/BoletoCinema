@@ -50,8 +50,8 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Reviews/Create
         public IActionResult Create()
         {
-            ViewData["movie_id"] = new SelectList(_context.movies, "id", "id");
-            ViewData["user_id"] = new SelectList(_context.users, "id", "id");
+            ViewData["movie_id"] = new SelectList(_context.movies, "id", "name");
+            ViewData["user_id"] = new SelectList(_context.users, "id", "username");
             return View();
         }
 

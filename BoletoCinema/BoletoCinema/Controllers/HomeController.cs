@@ -42,11 +42,83 @@ namespace BoletoCinema.Controllers
             User user = Ultils.getCurrentUser(HttpContext);
             ViewBag.Cate = _db.categories.ToArray();
             ViewBag.Movies = _db.movies.ToArray();
+            ViewBag.Branches = _db.branches.ToArray();
+            ViewBag.Schedules = _db.schedules.ToArray();
             return View(user);
+
         }
+
+        public IActionResult Search(string nameFilm, DateTime schedulesTime, string branchesName)
+        {   
+                
+            if(nameFilm == null)
+            {
+                var listSearch = from br in _db.branches
+                                 from sc in _db.schedules
+                                 from mv in _db.movies
+                                 where br.name == branchesName && sc.start_time == schedulesTime
+                                 select new { mv.id, mv.name, mv.poster };
+                ViewBag.resultSearch = listSearch;
+                ViewBag.Branches = _db.branches.ToArray();
+                ViewBag.Schedules = _db.schedules.ToArray();
+                ViewBag.Cate = _db.categories.ToArray();
+                ViewBag.Movies = _db.movies.ToArray();
+
+               
+            }
+            else if (schedulesTime == null)
+            {
+                var listSearch = from br in _db.branches
+                                 from sc in _db.schedules
+                                 from mv in _db.movies
+                                 where br.name == branchesName && mv.name == nameFilm
+                                 select new { mv.id, mv.name, mv.poster };
+                ViewBag.resultSearch = listSearch;
+                ViewBag.Branches = _db.branches.ToArray();
+                ViewBag.Schedules = _db.schedules.ToArray();
+                ViewBag.Cate = _db.categories.ToArray();
+                ViewBag.Movies = _db.movies.ToArray();
+
+            }
+            else if (branchesName == null)
+            {
+                var listSearch = from br in _db.branches
+                                 from sc in _db.schedules
+                                 from mv in _db.movies
+                                 where mv.name == nameFilm && sc.start_time == schedulesTime
+                                 select new { mv.id, mv.name, mv.poster };
+                ViewBag.resultSearch = listSearch;
+                ViewBag.Branches = _db.branches.ToArray();
+                ViewBag.Schedules = _db.schedules.ToArray();
+                ViewBag.Cate = _db.categories.ToArray();
+                ViewBag.Movies = _db.movies.ToArray();
+
+            }
+            else
+            {
+                var listSearch = from br in _db.branches
+                                 from sc in _db.schedules
+                                 from mv in _db.movies
+                                 where mv.name == nameFilm && sc.start_time == schedulesTime&& br.name == branchesName
+                                 select new { mv.id, mv.name, mv.poster };
+                ViewBag.resultSearch = listSearch;
+                ViewBag.Branches = _db.branches.ToArray();
+                ViewBag.Schedules = _db.schedules.ToArray();
+                ViewBag.Cate = _db.categories.ToArray();
+                ViewBag.Movies = _db.movies.ToArray();
+            }    
+            return View();
+        }
+         
         [Route("Home/MovieDetail/{id}")]
+
+
+
+
         public IActionResult MovieDetail(int? id)
         {
+
+
             ViewBag.Movie = _db.movies.Where(m => m.id == id).ToArray();
             var listTag = from ct in _db.categories
                           from mct in _db.movie_Categories
@@ -56,6 +128,12 @@ namespace BoletoCinema.Controllers
                            from mac in _db.movie_Actors
                            where ac.id == mac.actor_id && mac.movie_id == id
                            select ac;
+            var test = from rv in _db.reviews
+                       from us in _db.users
+                       where us.id == rv.user_id && rv.movie_id == id
+                       select new { rv.content, us.username, rv.heart_rate,us.avatar };
+            ViewBag.Test = test;
+            ViewBag.Review = _db.reviews.Where(m => m.movie_id == id).ToArray();
             ViewBag.listCast = listCast.ToArray();
             ViewBag.listTag = listTag.ToArray();
             ViewData["movie_id"] = id;
@@ -165,5 +243,7 @@ namespace BoletoCinema.Controllers
             User user = Ultils.getCurrentUser(HttpContext);
             return View(user);
         }
+
+      
     }
 }

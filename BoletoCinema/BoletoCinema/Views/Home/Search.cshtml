@@ -50,146 +50,144 @@
                 </div>
             </div>
             <div class="tab-area">
-                    <div class="tab-item active">
-                        <form class="ticket-search-form" asp-action="Search">
-                            <table class="table">
-                            <div class="form-group large">
-                                <input type="text" id="txtSearch" name="nameFilm" placeholder="Search fo Movies">
-                                <button type="submit"><i class="fas fa-search"></i></button>
+                <div class="tab-item active">
+                    <form class="ticket-search-form" asp-action="Search">
+                        <div class="form-group large">
+                            <input type="text" name="nameFilm" placeholder="Search fo Movies">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/date.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar" name="schedulesTime">
-                                    <option value="null">..Time..</option>
-                                    @foreach (var item in ViewBag.Schedules)
-                                    {
-                                        <option value="@item.start_time">@item.start_time</option>
-                                    }
-                                </select>
+                            <span class="type">date</span>
+                            <select class="select-bar" name="schedulesTime">
+                                <option value="null">..Time..</option>
+                                @foreach (var item in ViewBag.Schedules)
+                                {
+                                    <option value="@item.start_time">@item.start_time</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">cinema</span>
+                            <span class="type">cinema</span>
 
-                                <select class="select-bar" name="branchesName">
-                                    <option value="null">..Branches..</option>
-                                    @foreach (var item in ViewBag.Branches)
-                                    {
-                                        <option value="@item.name">@item.name</option>
-                                    }
+                            <select class="select-bar" name="branchesName">
+                                <option value="null">..Branches..</option>
+                                @foreach (var item in ViewBag.Branches)
+                                {
+                                    <option value="@item.name">@item.name</option>
+                                }
 
-                                </select>
-                            </div>
-                            </table>
-                        </form>
-                    </div>
-              
+                            </select>
+                        </div>
+                    </form>
+                </div>
 
-                    <div class="tab-item">
-                        <form class="ticket-search-form">
-                            <div class="form-group large">
-                                <input type="text" placeholder="Search fo Events">
-                                <button type="submit"><i class="fas fa-search"></i></button>
+
+                <div class="tab-item">
+                    <form class="ticket-search-form">
+                        <div class="form-group large">
+                            <input type="text" placeholder="Search fo Events">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/city.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/city.png" alt="ticket">
-                                </div>
-                                <span class="type">city</span>
-                                <select class="select-bar">
-                                    <option value="london">London</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
+                            <span class="type">city</span>
+                            <select class="select-bar">
+                                <option value="london">London</option>
+                                <option value="dhaka">dhaka</option>
+                                <option value="rosario">rosario</option>
+                                <option value="madrid">madrid</option>
+                                <option value="koltaka">kolkata</option>
+                                <option value="rome">rome</option>
+                                <option value="khoksa">khoksa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/date.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar">
-                                    <option value="26-12-19">23/10/2020</option>
-                                    <option value="26-12-19">24/10/2020</option>
-                                    <option value="26-12-19">25/10/2020</option>
-                                    <option value="26-12-19">26/10/2020</option>
-                                </select>
+                            <span class="type">date</span>
+                            <select class="select-bar">
+                                <option value="26-12-19">23/10/2020</option>
+                                <option value="26-12-19">24/10/2020</option>
+                                <option value="26-12-19">25/10/2020</option>
+                                <option value="26-12-19">26/10/2020</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">event</span>
-                                <select class="select-bar">
-                                    <option value="angular">angular</option>
-                                    <option value="startup">startup</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="Last-First">Last-First</option>
-                                    <option value="wish">wish</option>
-                                </select>
+                            <span class="type">event</span>
+                            <select class="select-bar">
+                                <option value="angular">angular</option>
+                                <option value="startup">startup</option>
+                                <option value="rosario">rosario</option>
+                                <option value="madrid">madrid</option>
+                                <option value="koltaka">kolkata</option>
+                                <option value="Last-First">Last-First</option>
+                                <option value="wish">wish</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-item">
+                    <form class="ticket-search-form">
+                        <div class="form-group large">
+                            <input type="text" placeholder="Search fo Sports">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/city.png" alt="ticket">
                             </div>
-                        </form>
-                    </div>
-                    <div class="tab-item">
-                        <form class="ticket-search-form">
-                            <div class="form-group large">
-                                <input type="text" placeholder="Search fo Sports">
-                                <button type="submit"><i class="fas fa-search"></i></button>
+                            <span class="type">city</span>
+                            <select class="select-bar">
+                                <option value="london">London</option>
+                                <option value="dhaka">dhaka</option>
+                                <option value="rosario">rosario</option>
+                                <option value="madrid">madrid</option>
+                                <option value="koltaka">kolkata</option>
+                                <option value="rome">rome</option>
+                                <option value="khoksa">khoksa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/date.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/city.png" alt="ticket">
-                                </div>
-                                <span class="type">city</span>
-                                <select class="select-bar">
-                                    <option value="london">London</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
+                            <span class="type">date</span>
+                            <select class="select-bar">
+                                <option value="26-12-19">23/10/2020</option>
+                                <option value="26-12-19">24/10/2020</option>
+                                <option value="26-12-19">25/10/2020</option>
+                                <option value="26-12-19">26/10/2020</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="thumb">
+                                <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar">
-                                    <option value="26-12-19">23/10/2020</option>
-                                    <option value="26-12-19">24/10/2020</option>
-                                    <option value="26-12-19">25/10/2020</option>
-                                    <option value="26-12-19">26/10/2020</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="~/User/assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">sports</span>
-                                <select class="select-bar">
-                                    <option value="football">football</option>
-                                    <option value="cricket">cricket</option>
-                                    <option value="cabadi">cabadi</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="gadon">gadon</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
+                            <span class="type">sports</span>
+                            <select class="select-bar">
+                                <option value="football">football</option>
+                                <option value="cricket">cricket</option>
+                                <option value="cabadi">cabadi</option>
+                                <option value="madrid">madrid</option>
+                                <option value="gadon">gadon</option>
+                                <option value="rome">rome</option>
+                                <option value="khoksa">khoksa</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -225,35 +223,35 @@
                                 </div>
                             }
                             @*<div class="form-group">
-                                <input type="checkbox" name="genre" id="genre1"><label for="genre1">thriller</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre2"><label for="genre2">horror</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre3"><label for="genre3">drama</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre4"><label for="genre4">romance</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre5"><label for="genre5">action</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre6"><label for="genre6">comedy</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre7"><label for="genre7">romantic</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre8"><label for="genre8">animation</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre9"><label for="genre9">sci-fi</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="genre" id="genre10"><label for="genre10">adventure</label>
-                            </div>*@
+                                    <input type="checkbox" name="genre" id="genre1"><label for="genre1">thriller</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre2"><label for="genre2">horror</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre3"><label for="genre3">drama</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre4"><label for="genre4">romance</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre5"><label for="genre5">action</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre6"><label for="genre6">comedy</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre7"><label for="genre7">romantic</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre8"><label for="genre8">animation</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre9"><label for="genre9">sci-fi</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="genre" id="genre10"><label for="genre10">adventure</label>
+                                </div>*@
                         </div>
                         <div class="add-check-area">
                             <a href="#0">view more <i class="plus"></i></a>
@@ -308,20 +306,20 @@
                     <div class="tab-area">
                         <div class="tab-item active">
                             <div class="row mb-10 justify-content-center">
-                                @foreach (var m in ViewBag.Movies)
+                                @foreach (var item in ViewBag.resultSearch)
                                 {
                                     <div class="col-sm-6 col-lg-4">
                                         <div class="movie-grid">
                                             <div class="movie-thumb c-thumb">
-                                                <a asp-controller="Home" asp-action="MovieDetail" asp-route-id="@m.id">
+                                                <a  asp-controller="Home" asp-action="MovieDetail" asp-route-id="@item.GetType().GetProperty("id").GetValue(item, null)" alt="movie" >
 
-                                                    <img style="height: 325px" src="@m.poster" alt="movie">
+                                                    <img style="height: 325px" src="@item.GetType().GetProperty("poster").GetValue(item, null)" alt="movie">
 
                                                 </a>
                                             </div>
                                             <div class="movie-content bg-one">
                                                 <h5 class="title m-0">
-                                                    <a asp-controller="Home" asp-action="MovieDetail">@m.name</a>
+                                                    <a asp-controller="Home" asp-action="MovieDetail">@item.GetType().GetProperty("name").GetValue(item, null)"</a>
                                                 </h5>
                                                 <ul class="movie-rating-percent">
                                                     <li>
@@ -1113,14 +1111,6 @@
             if (item.checked) {
                 console.log(item.value);
             }
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        $(".txtSearch").on("keyup", function () {
-            var dataSearch = $(this).val.toLowerCase();
         });
     });
 </script>

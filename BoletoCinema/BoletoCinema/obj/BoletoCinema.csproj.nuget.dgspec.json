@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {}
+    "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {}
   },
   "projects": {
-    "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {
+    "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+        "projectUniqueName": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
         "projectName": "BoletoCinema",
-        "projectPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\DoAn\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
+        "projectPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\BoletoCinema.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "B:\\LTWEB.ASP.NET\\BoletoCinema\\BoletoCinema\\BoletoCinema\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

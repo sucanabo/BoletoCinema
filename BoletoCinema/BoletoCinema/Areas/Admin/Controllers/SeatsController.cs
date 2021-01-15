@@ -50,6 +50,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["room_id"] = new SelectList(_context.rooms, "id", "name");
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address");
             return View();
         }
 
@@ -58,12 +59,17 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,room_id,position")] Seat seat)
+        public async Task<IActionResult> Create(string sum_row , string r_id , Seat seat)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(seat);
-                await _context.SaveChangesAsync();
+                int number_seat = int.Parse(sum_row)*14;
+                for( int i = 0; i < number_seat; i++)
+                {
+                    var s = new Seat{ room_id = int.Parse(r_id) , position = i.ToString()};
+                    _context.Add(s);
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["room_id"] = new SelectList(_context.rooms, "id", "name", seat.room_id);

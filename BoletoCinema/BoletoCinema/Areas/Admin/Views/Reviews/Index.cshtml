@@ -14,6 +14,12 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.user.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.movie.name)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.content)
             </th>
             <th>
@@ -22,18 +28,19 @@
             <th>
                 @Html.DisplayNameFor(model => model.create_date)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.user)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.movie)
-            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.movie.name)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.content)
             </td>
@@ -43,12 +50,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.create_date)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.user.id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.movie.id)
-            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.id">Details</a> |
