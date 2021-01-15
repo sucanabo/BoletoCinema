@@ -75,6 +75,13 @@ namespace BoletoCinema.Controllers
                                    where cc.movie_id == id
                                    select cc).ToArray();
             ViewData["movie_id"] = id;
+            if ( user != null)
+            {
+                TempData["IS_LOGON"] = "true";
+            } else
+            {
+                TempData["IS_LOGON"] = "false";
+            }
 
             return View(user);
         }

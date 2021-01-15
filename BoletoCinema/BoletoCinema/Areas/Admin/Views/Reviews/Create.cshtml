@@ -15,11 +15,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="user_id" class="control-label"></label>
-                <select asp-for="user_id" class ="form-control" asp-items="ViewBag.user_id"></select>
+                <select asp-for="user_id" class="form-control" asp-items="ViewBag.user_id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="movie_id" class="control-label"></label>
-                <select asp-for="movie_id" class ="form-control" asp-items="ViewBag.movie_id"></select>
+                <select asp-for="movie_id" class="form-control" asp-items="ViewBag.movie_id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="content" class="control-label"></label>
@@ -46,6 +46,9 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+
+<!-- Button trigger modal -->
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

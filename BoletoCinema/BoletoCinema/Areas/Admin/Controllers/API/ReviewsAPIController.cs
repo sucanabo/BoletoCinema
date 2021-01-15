@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BoletoCinema.Areas.Admin.Data;
 using BoletoCinema.Areas.Admin.Models;
 
-namespace BoletoCinema.Areas.Admin.Controllers
+namespace BoletoCinema.Areas.Admin.Controllers.API
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
@@ -86,18 +86,25 @@ namespace BoletoCinema.Areas.Admin.Controllers
 
         // DELETE: api/ReviewsAPI/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReview(int id)
+        public async Task<JsonResult> DeleteReview(int id)
         {
             var review = await _context.reviews.FindAsync(id);
             if (review == null)
             {
-                return NotFound();
+                return new JsonResult(new
+                {
+                    result = "fail"
+                });
             }
 
             _context.reviews.Remove(review);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return new JsonResult(new
+            {
+                result = "success",
+                review = review
+            }) ;
         }
 
         private bool ReviewExists(int id)

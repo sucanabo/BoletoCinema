@@ -207,7 +207,7 @@
                             <div class="tab-item">
                                 <h5 class="sub-title">POST YOUR DISCUSSTION</h5>
                                 <br />
-                            @if (User.Identity.IsAuthenticated || Model != null)
+                            @if (TempData["IS_LOGON"] == "true" || Model != null)
                             {
 
                             <div class="form-group">

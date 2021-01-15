@@ -74,7 +74,7 @@ document.querySelector('#btnPostDiscusstion').addEventListener('click', async (e
             "Content-type": "application/json; charset=UTF-8"
         }
     });
-    const responeJson = await respone.json();
+    const responeJson = await respone.json();   
 
     if (responeJson.result == 'fail') {
         alert('Post review fail!');
@@ -108,3 +108,4 @@ document.querySelector('#btnPostDiscusstion').addEventListener('click', async (e
 
     alert("Your comment have been posted!");
 });
+
