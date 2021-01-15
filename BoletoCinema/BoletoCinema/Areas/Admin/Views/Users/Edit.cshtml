@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
             <div class="form-group">
@@ -20,34 +20,48 @@
                 <span asp-validation-for="username" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="password" class="control-label"></label>
+                <label asp-for="username" class="control-label"></label>
                 <input asp-for="password" class="form-control" />
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="displayname" class="control-label"></label>
+                <label asp-for="password" class="control-label"></label>
                 <input asp-for="displayname" class="form-control" />
                 <span asp-validation-for="displayname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
+                <label asp-for="displayname" class="control-label"></label>
                 <input asp-for="email" class="form-control" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="birthday" class="control-label"></label>
+                <label asp-for="email" class="control-label"></label>
                 <input asp-for="birthday" class="form-control" />
                 <span asp-validation-for="birthday" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="avatar" class="control-label"></label>
-                <input asp-for="avatar" class="form-control" />
+            <div class="custom-file form-group mb-3">
+                <input asp-for="birthday" type="file" class="custom-file-input" id="ful" name="ful" />
+                <label asp-for="avatar" class="custom-file-label" for="ful">Choose Image...</label>
                 <span asp-validation-for="avatar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                @if (Model.avatar == null)
+                {
+
+                    <img src="~/Admin/assets/images/noimg.png" alt="None image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto" />
+                }
+                else
+                {
+                    <img src="~/Admin/assets/images/user/@Model.avatar" alt="Image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto" />
+
+                }
+
             </div>
             <div class="form-group">
                 <label asp-for="rule" class="control-label"></label>
                 <input asp-for="rule" class="form-control" />
-                <span asp-validation-for="rule" class="text-danger"></span>
+                <span asp-validation-for="avatar" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
