@@ -13,6 +13,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
     [Area("Admin")]
     public class BranchesController : Controller
     {
+        
         private readonly BoletoContext _context;
 
         public BranchesController(BoletoContext context)
@@ -23,6 +24,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         // GET: Admin/Branches
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.branches.ToListAsync());
         }
 
@@ -57,12 +59,16 @@ namespace BoletoCinema.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,name,address,status")] Branch branch)
         {
+            
             if (ModelState.IsValid)
             {
                 _context.Add(branch);
                 await _context.SaveChangesAsync();
+                SetAlert("Created success !");
                 return RedirectToAction(nameof(Index));
+
             }
+            SetAlert("Created fail !");
             return View(branch);
         }
 
@@ -98,11 +104,13 @@ namespace BoletoCinema.Areas.Admin.Controllers
             {
                 try
                 {
+                    SetAlert("Edited success !");
                     _context.Update(branch);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
+                    SetAlert("Edited fail !");
                     if (!BranchExists(branch.id))
                     {
                         return NotFound();
@@ -140,6 +148,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            SetAlert("Deleted success !");
             var branch = await _context.branches.FindAsync(id);
             _context.branches.Remove(branch);
             await _context.SaveChangesAsync();
@@ -149,6 +158,11 @@ namespace BoletoCinema.Areas.Admin.Controllers
         private bool BranchExists(int id)
         {
             return _context.branches.Any(e => e.id == id);
+        }
+
+        public void SetAlert(String mess)
+        {
+            TempData["StatusMessage"] = mess;
         }
     }
 }

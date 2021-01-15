@@ -59,6 +59,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,name,image")] Actor actor, IFormFile ful)
         {
+           
             if (ModelState.IsValid)
             {
                 _context.Add(actor);
