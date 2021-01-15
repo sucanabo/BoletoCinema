@@ -62,10 +62,12 @@ namespace BoletoCinema.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                SetNotification("Created success !");
                 _context.Add(room);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            SetNotification("Created fail !");
             ViewData["branch_id"] = new SelectList(_context.branches, "id", "address", room.branch_id);
             return View(room);
         }
@@ -101,6 +103,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                SetNotification("Edited success !");
                 try
                 {
                     _context.Update(room);
@@ -108,6 +111,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
+                    SetNotification("Edited fail !");
                     if (!RoomExists(room.id))
                     {
                         return NotFound();
@@ -147,6 +151,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            SetNotification("Deleted success !");
             var room = await _context.rooms.FindAsync(id);
             _context.rooms.Remove(room);
             await _context.SaveChangesAsync();
@@ -156,6 +161,11 @@ namespace BoletoCinema.Areas.Admin.Controllers
         private bool RoomExists(int id)
         {
             return _context.rooms.Any(e => e.id == id);
+        }
+
+        public void SetNotification(String message)
+        {
+            TempData["Message"] = message;
         }
     }
 }
