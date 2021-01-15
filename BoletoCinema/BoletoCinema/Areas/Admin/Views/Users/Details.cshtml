@@ -44,8 +44,18 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.avatar)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.avatar)
+        <dd class="col-sm-10">
+
+            @if (Model.avatar == null)
+            {
+
+                <img src="~/Admin/assets/images/noimg.png" alt="None image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto" />
+            }
+            else
+            {
+                <img src="~/Admin/assets/images/user/@Model.avatar" alt="Image" class="img-thumbnail" id="imgPre" style="height:400px; width:auto" />
+
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.rule)
