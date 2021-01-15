@@ -50,7 +50,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["room_id"] = new SelectList(_context.rooms, "id", "name");
-            ViewData["branch_id"] = new SelectList(_context.branches, "id", "address");
+            ViewData["branch_id"] = new SelectList(_context.branches, "id", "name");
             return View();
         }
 
@@ -163,5 +163,7 @@ namespace BoletoCinema.Areas.Admin.Controllers
         {
             return _context.seats.Any(e => e.id == id);
         }
+
+
     }
 }
