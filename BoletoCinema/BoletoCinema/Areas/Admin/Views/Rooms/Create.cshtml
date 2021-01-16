@@ -45,7 +45,7 @@
 
     const getElement = document.querySelector.bind(document);
     const room_uri = "../../api/rooms";
-    const seat_uri = "../../api/seats";
+    const seat_uri = "../../api/seats/PostSeat";
     const createRoom = async () => {
         let room_item = {
             "id": 0,
@@ -84,7 +84,7 @@
                 body: JSON.stringify(seat_item)
             })
         }
-        window.location.href = "../../admin/seats";
+        window.location.href = "../../admin/rooms";
     }
 
 </script>

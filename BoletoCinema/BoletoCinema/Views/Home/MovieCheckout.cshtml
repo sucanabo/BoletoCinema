@@ -11,7 +11,7 @@
                 Đặt vé thành công
             </div>
             <div class="modal-footer">
-                <button id="ok_btn" type="button" class="btn btn-primary" >OK</button>
+                <button id="ok_btn" type="button" class="btn btn-primary">OK</button>
             </div>
         </div>
     </div>
@@ -21,10 +21,10 @@
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-content style-two">
-                <h3 class="title">@TempData["MovieName"]</h3>
+                <h3 class="title">Boleto Checkout</h3>
                 <div class="tags">
-                    <a href="#0">City Walk</a>
-                    <a href="#0">English - 2D</a>
+                    <a href="#0">Welcome</a>
+
                 </div>
             </div>
         </div>
@@ -95,11 +95,11 @@
                     <h4 class="title">booking summery</h4>
                     <ul>
                         <li>
-                            <h6 class="subtitle" id="ticket-movie">@TempData["MovieName"]</h6>
+                            <h6 class="subtitle" id="ticket-movie">Checkout</h6>
                         </li>
                         <li>
                             <h6 class="subtitle"><span id="ticket-branch"></span><span id="ticket-quantity"></span></h6>
-                            <div class="info"><span>10 SEP TUE, 11:00 PM</span> <span>Tickets</span></div>
+                            <div class="info"><span id="show_time"></span> <span>Tickets</span></div>
                         </li>
                         <li>
                             <h6 class="subtitle mb-0"><span>Tickets  Price</span><span class="ticket-tmpPrice"></span></h6>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="proceed-area  text-center">
                     <h6 class="subtitle"><span>Amount Payable</span><span id="ticket-totalPrice"></span></h6>
-                    <a href="#" id="proceed-button" data-toggle="modal" data-target="#exampleModal" onclick="saveOrder()" class="custom-button" >proceed</a>
+                    <a href="#" id="proceed-button" data-toggle="modal" data-target="#exampleModal" onclick="saveOrder()" class="custom-button">proceed</a>
                 </div>
             </div>
 

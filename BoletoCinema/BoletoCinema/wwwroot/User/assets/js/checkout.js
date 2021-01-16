@@ -2,6 +2,10 @@
 var seatPlan = JSON.parse(sessionStorage.getItem("seatPlan"));
 var tmpPrice = document.querySelectorAll('.ticket-tmpPrice');
 var sch_id = parseInt(sessionStorage.getItem('sch-id'));
+//var uri_schedule = `../../api/ `;
+//const showTime = fetch () {
+
+//}
 tmpPrice.forEach(item => {
     item.innerText = "$" + seatPlan["totalPrice"];
 });

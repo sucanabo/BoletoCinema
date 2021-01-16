@@ -3,6 +3,18 @@
 *@
 @{
 }
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                Đã ghi lại lời nhắn !
+            </div>
+            <div class="modal-footer">
+                <button id="contact_btn" type="button" class="btn btn-primary ">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="main-page-header speaker-banner bg_img" data-background="~/User/assets/images/banner/banner07.jpg">
     <div class="container">
         <div class="speaker-banner-content">
@@ -36,10 +48,10 @@
                     <form class="contact-form" asp-controller="Home" asp-action="Index">
                         <div class="form-group">
                             <label for="message">Message <span></span></label>
-                            <textarea  id="feedback" placeholder="Enter Your Message" required></textarea>
+                            <textarea id="feedback" placeholder="Enter Your Message" required></textarea>
                         </div>
                         <div class="form-group">
-                            <input class="custom-button" type="button" onclick="sendFeedback()" value="Send Message">
+                            <input class="custom-button" type="button" data-toggle="modal" data-target="#contact-modal" onclick="sendFeedback()" value="Send Message">
                         </div>
                     </form>
                 </div>
