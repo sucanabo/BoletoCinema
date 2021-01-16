@@ -9156,8 +9156,8 @@ img {
     padding: 5px 10px;
 }
 
-    .my-modal .modal-close {
-        font-size: 15px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
+.my-modal .modal-close {
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
