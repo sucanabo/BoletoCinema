@@ -111,6 +111,7 @@ namespace BoletoCinema.Controllers
 
             ViewBag.MovieName = movieName;
             ViewData["MovieName"] = movieName;
+            TempData["MovieName"] = movieName.First();
             ViewData["Title"] = "MovieTicketPlan";
             ViewData["_movie_id"] = id;
 

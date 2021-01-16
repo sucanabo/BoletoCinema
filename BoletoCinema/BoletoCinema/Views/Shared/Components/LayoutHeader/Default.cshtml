@@ -35,7 +35,7 @@
     {
         <li>
 
-            @if (Model.id != null)
+            @if (Model.id != 0)
             {
                 <a href="#0">Hello,@Model.displayname </a>
                 <div id="user-displayname" data-id="@Model.id" hidden="hidden">@Model.displayname</div>

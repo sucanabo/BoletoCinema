@@ -42,7 +42,7 @@ namespace BoletoCinema.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Auth");
         }
 
 
@@ -127,9 +127,10 @@ namespace BoletoCinema.Controllers
             HttpContext.Session.SetString("user", str);
             if (r[0].rule == 1)
             {
-                var url = Url.RouteUrl("Admin", new { Controller = "Home", action = "Index", area = "Admin" });
+                //var url = Url.RouteUrl("Admin", new { Controller = "Home", action = "Index", area = "Admin" });
                 SetAlert("Login success - Admin", "success");
-                return Redirect(url);
+                //return Redirect(url);
+                return RedirectToAction("Index", "Home", new { area = "Admin" });
             }
             SetAlert("Login success - User", "success");
 

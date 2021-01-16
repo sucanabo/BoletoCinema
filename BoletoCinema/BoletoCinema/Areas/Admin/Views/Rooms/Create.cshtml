@@ -11,24 +11,28 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="branch_id" class="control-label"></label>
-                <select asp-for="branch_id" class ="form-control" asp-items="ViewBag.branch_id"></select>
+                <select id="branch-id" asp-for="branch_id" class="form-control" asp-items="ViewBag.branch_id"></select>
             </div>
             <div class="form-group">
                 <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
+                <input id="name" asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label for="seatcol">Seat Col</label>
+                <input class="form-control" id="seatcol" type="number" />
+            </div>
+            <div class="form-group">
                 <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
+                <input id="status" asp-for="status" class="form-control" />
                 <span asp-validation-for="status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <a onclick="createRoom()" href="#" class="btn btn-primary">Create</a>
             </div>
         </form>
     </div>
@@ -37,7 +41,53 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<script>
 
+    const getElement = document.querySelector.bind(document);
+    const room_uri = "../../api/rooms";
+    const seat_uri = "../../api/seats";
+    const createRoom = async () => {
+        let room_item = {
+            "id": 0,
+            "branch_id": getElement('#branch-id').value,
+            "name": getElement('#name').value,
+            "status": getElement('#status').value
+        };
+        console.log('item', room_item);
+        let room = await fetch(room_uri, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(room_item)
+        });
+        let data = await room.json();
+        console.log('data', data);
+        let room_id = await data.id;
+        console.log('room id', room_id);
+        let numberSeats = getElement('#seatcol').value * 14;
+        console.log(numberSeats);
+        for (let i = 0; i < numberSeats; i++) {
+            let seat_item = {
+                "id": 0,
+                "room_id": room_id,
+                "position": `${i}`
+            };
+            console.log(seat_item);
+            fetch(seat_uri, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(seat_item)
+            })
+        }
+        window.location.href = "../../admin/seats";
+    }
+
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

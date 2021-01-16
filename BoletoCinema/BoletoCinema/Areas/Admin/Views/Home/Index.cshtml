@@ -5,6 +5,14 @@
     ViewData["Title"] = "Home";
     Layout = "_LayoutAdmin";
 }
+@if (TempData["alert-mess"] != null)
+{
+    <div class="my-modal @TempData["alert-type"]">
+        <span class="modal-mess">@TempData["alert-mess"]</span>
+        &nbsp;|&nbsp;
+        <span class="modal-close"><i class="fas fa-times"></i></span>
+    </div>
+}
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
